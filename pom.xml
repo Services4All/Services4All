@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.eci.ieti.services4All</groupId>
-	<artifactId>Gooffer</artifactId>
+	<artifactId>services4All</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Gooffer</name>
-	<description>Proyecto Arsw</description>
+	<name>services4All</name>
+	<description>Proyecto Ieti</description>
 
 	<properties>
 		<java.version>1.8</java.version>

@@ -1,10 +1,10 @@
-package edu.escuelaing.eci.arsw.services4All;
+package edu.escuelaing.eci.ieti.services4All;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GoofferApplicationTests {
+class Services4AllTests {
 
 	@Test
 	void contextLoads() {
