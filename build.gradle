@@ -21,10 +21,6 @@ dependencies {
 
 test {
 	useJUnitPlatform()
-}
-
-test {
-	useJUnitPlatform()
 	finalizedBy jacocoTestReport
 }
 
