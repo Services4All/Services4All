@@ -12,16 +12,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class ServiceControllerTest {
+public class ServicioControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Test
-    void getHello() throws Exception {
+    void getService() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/service").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("services!")));
     }
+ 
 
 }
