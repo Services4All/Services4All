@@ -3,13 +3,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.sql.Date;
 
+import edu.escuelaing.service4All.backend.Service4AllApplication;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import edu.escuelaing.service4All.backend.model.Servicio;
+import org.springframework.test.context.junit4.SpringRunner;
 
 
-@SpringBootTest
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = Service4AllApplication.class)
 public class ServicioTest {
 
 
