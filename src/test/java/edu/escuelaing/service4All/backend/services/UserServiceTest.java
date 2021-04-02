@@ -23,11 +23,6 @@ public class UserServiceTest {
     UserService userService;
 
     @Test
-    public void main() {
-        Service4AllApplication.main(new String[] {});
-    }
-
-    @Test
     public void shouldFindUserByName() throws Service4AllException {
         User user = userService.findUserByName("Prueba");
         Assert.assertTrue(user.getId()==1000);
