@@ -3,12 +3,14 @@ package edu.escuelaing.service4All.backend.services;
 import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
+import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -21,6 +23,9 @@ import java.util.List;
 public class UserServiceTest {
     @Autowired
     UserService userService;
+
+    @Autowired
+    UserDetailsServiceImpl userDetailsService;
 
     @Test
     public void shouldFindUserByName() throws Service4AllException {
@@ -73,5 +78,12 @@ public class UserServiceTest {
         User user = new User(1, "Prueba", "Prueba", "prueba@mail.com", "12345", "Zapatos", "Bogotá", "123456789");
         Assert.assertTrue(user.getId()==1);
     }
+
+    @Test
+    public void shouldLoadUserByUsername(){
+        UserDetails userDetails = this.userDetailsService.loadUserByUsername("prueba@mail.com");
+        Assert.assertTrue(userDetails.getUsername().equals("Prueba"));
+    }
+
 
 }

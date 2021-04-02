@@ -77,4 +77,19 @@ public class UserControllerTest {
         }
     }
 
+    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+    @Test
+    public void shouldLogoutUser() throws Exception {
+        mockMvc.perform(
+                get("/login?logout"))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    public void shouldNotLogoutUser() throws Exception {
+        mockMvc.perform(
+                get("/login?logout"))
+                .andExpect(status().isOk());
+    }
+
 }
