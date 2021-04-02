@@ -1,7 +1,8 @@
 package edu.escuelaing.service4All.backend.security;
 
+import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
-import edu.escuelaing.service4All.backend.service.UserService;
+import edu.escuelaing.service4All.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -20,7 +21,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userService.findUserByName(username);
+        User user = null;
+        try {
+            user = userService.getUserByCorreo(username);
+        } catch (Service4AllException e) {
+            e.printStackTrace();
+        }
 
         List<GrantedAuthority> roles = new ArrayList<>();
         roles.add(new SimpleGrantedAuthority("ADMIN"));

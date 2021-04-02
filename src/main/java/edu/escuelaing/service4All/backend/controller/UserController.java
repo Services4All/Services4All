@@ -1,8 +1,7 @@
 package edu.escuelaing.service4All.backend.controller;
 
 import com.google.gson.Gson;
-import edu.escuelaing.service4All.backend.model.User;
-import edu.escuelaing.service4All.backend.service.UserService;
+import edu.escuelaing.service4All.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,9 +24,13 @@ public class UserController {
         }
     }
 
+    @GetMapping
     public ResponseEntity<?> getUsers(){
-        return null;
+        try{
+            return new ResponseEntity<>(new Gson().toJson(userService.findAll()), HttpStatus.OK);
+        }catch (Exception ex){
+            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
+        }
     }
-
 
 }

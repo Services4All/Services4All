@@ -8,18 +8,20 @@ plugins {
 
 group = 'edu.escuelaing'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
+	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.security:spring-security-test'
-	implementation 'org.projectlombok:lombok:1.18.16'
 	implementation 'com.google.code.gson:gson:2.8.6'
+	implementation('org.postgresql:postgresql')
+	implementation 'junit:junit:4.12'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
