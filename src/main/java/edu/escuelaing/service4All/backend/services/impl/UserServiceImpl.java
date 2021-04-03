@@ -5,6 +5,7 @@ import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.repository.UserRepository;
 import edu.escuelaing.service4All.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -55,14 +56,14 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * Este es el método que implementa el registro del usuario (Esteban Bernal)
+     * Este es el método que implementa el registro del usuario
      *
      * @param user
      * @return
      */
     @Override
-    public User signin(User user) {
-        return null;
+    public void saveUser(User user) {
+       
     }
 
     /**

@@ -25,16 +25,20 @@ public class Servicio {
 	
 	@Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "categoria")
+    private String categoria;
 	
 	@Column(name = "creationdate")
     private Date creationdate;
 	
 
-    public Servicio(int id, int idVendedor, String nombre, String descripcion,  Date creacion) {
+    public Servicio(int id, int idVendedor, String nombre, String descripcion, String categoria, Date creacion) {
         this.id = id;
         this.idusuario = idVendedor;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.categoria=categoria;
         this.creationdate = creacion;
     }
     public Servicio() {
@@ -80,5 +84,11 @@ public class Servicio {
 
     public void setCreacion(Date creacion) {
         this.creationdate = creacion;
+    }
+    public String getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }

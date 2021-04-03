@@ -23,8 +23,8 @@ public class User {
     @Column(name = "cedula")
     private String cedula;
 
-    @Column(name = "category")
-    private String category;
+    @Column(name = "tipo")
+    private String tipo;
 
     @Column(name = "city")
     private String city;
@@ -35,13 +35,13 @@ public class User {
     public User() {
     }
 
-    public User(int id, String firstname, String lastname, String email, String cedula, String category, String city, String password) {
+    public User(int id, String firstname, String lastname, String email, String cedula, String tipo, String city, String password) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
         this.cedula = cedula;
-        this.category = category;
+        this.tipo = tipo;
         this.city = city;
         this.password = password;
     }
@@ -86,12 +86,12 @@ public class User {
         this.cedula = cedula;
     }
 
-    public String getCategory() {
-        return category;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getCity() {

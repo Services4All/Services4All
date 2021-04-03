@@ -14,11 +14,12 @@ public interface UserService {
      */
     public User isRegister(User user) throws Service4AllException;
 
-    public User signin(User user);
+    public void saveUser(User user);
 
     public User getUserByCorreo(String correo) throws Service4AllException;
 
     public User findUserByName(String name) throws Service4AllException;
 
     public List<User> findAll();
+
 }
