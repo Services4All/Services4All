@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,8 +53,7 @@ public class ComentarioController {
 	@RequestMapping(value="/comentarioNuevo",method = RequestMethod.POST)
     public ResponseEntity<?> addComentario(@RequestBody Comentario comentario){
         try {
-        	System.out.println(" LLEGUE BIEN GRACIAS POR PREGUNTAR  0000");        	
-        	System.out.println(" LLEGUE BIEN GRACIAS POR PREGUNTAR  "+ comentario);
+            System.out.println("entre bien gracias por preguntar que beio");
         	comentarioServices.saveComentario(comentario);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception ex) {

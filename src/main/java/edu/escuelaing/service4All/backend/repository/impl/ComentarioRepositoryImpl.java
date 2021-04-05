@@ -29,7 +29,6 @@ public class ComentarioRepositoryImpl{
         comentarioRepository.save(comentario);
     }
 	public Optional<Comentario>  findAllComentariosById(int id) {
-		//Optional<Comentario> res =
 		List<Comentario> res= new ArrayList<Comentario>();
 		for (Comentario c: comentarioRepository.findAll()) {
 			if(c.getIdservicio()==id) {
