@@ -33,7 +33,6 @@ public class UserServiceTest {
         Assert.assertTrue(user.getId()==1000);
         Assert.assertTrue(user.getFirstname().equals("Prueba"));
         Assert.assertTrue(user.getEmail().equals("prueba@mail.com"));
-        Assert.assertTrue(user.getTipo().equals("vendedor"));
         Assert.assertTrue(user.getCedula().equals("123456789"));
         Assert.assertTrue(user.getCity().equals("Bogotá"));
         Assert.assertTrue(user.getLastname().equals("Prueba"));

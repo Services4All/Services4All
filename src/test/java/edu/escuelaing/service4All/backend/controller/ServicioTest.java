@@ -19,27 +19,27 @@ public class ServicioTest {
 
     @Test
     void pruebaCreacionServicio() throws Exception {
-        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio","plomeria",new Date(0, 0, 0));
+        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio",new Date(0, 0, 0),"plomeria");
         assertTrue(nuevo.getDescripcion().equals("nuevo servicio") && nuevo.getNombre().equals("nuevo"));
     }
     @Test
     void pruebaId() throws Exception {
-        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio","plomeria",new Date(0, 0, 0));
+        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio",new Date(0, 0, 0),"plomeria");
         assertTrue(nuevo.getId()==1);
     }
     @Test
     void pruebaIdVendedor() throws Exception {
-        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio","plomeria",new Date(0, 0, 0));
+        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio",new Date(0, 0, 0),"plomeria");
         assertTrue(nuevo.getIdVendedor()==1);
     }
     @Test
     void pruebaDate() throws Exception {
-        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio","plomeria",new Date(0, 0, 0));
+        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio",new Date(0, 0, 0),"plomeria");
         assertTrue(nuevo.getCreacion().equals(new Date(0, 0, 0)));
     }
     @Test
     void pruebaSet() throws Exception {
-        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio","plomeria",new Date(0, 0, 0));
+        Servicio nuevo =new Servicio(1,1,"nuevo","nuevo servicio",new Date(0, 0, 0),"plomeria");
         nuevo.setCreacion(new Date(1, 1, 1));
         nuevo.setDescripcion("nueva Descripcion");
         nuevo.setId(2);
