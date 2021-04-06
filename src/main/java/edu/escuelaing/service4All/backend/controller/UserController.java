@@ -37,13 +37,4 @@ public class UserController {
         }
     }
 
-    @PostMapping("/saludo")
-    public ResponseEntity<?> saludoPost(){
-        System.out.println("Hola Mundo desde Spring Boot");
-        JsonParser parser = new JsonParser();
-        JsonElement jsonElement = parser.parse("{\"message\":\"Hi\",\"place\":{\"name\":\"World!\"}}");
-        return new ResponseEntity<>(new Gson().toJson(jsonElement), HttpStatus.OK);
-    }
-    
-
 }

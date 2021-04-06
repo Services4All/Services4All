@@ -11,6 +11,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import edu.escuelaing.service4All.backend.model.Servicio;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -55,5 +56,44 @@ public class ServiceControllerTest {
         serviceController.newService(nuevo2);
               
     }
+
+    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+    @Test
+    void shouldGetServiceById() throws Exception {
+        mvc.perform(
+                get("/service/79")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+
+    }
+
+    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+    @Test
+    void shouldGetAllServicesIfContainAKeyValueInName() throws Exception {
+        mvc.perform(
+                get("/services/a")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+    @Test
+    void shouldNotGetServiceById() throws Exception {
+        mvc.perform(
+                get("/service/10000000")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+
+    }
+
+    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+    @Test
+    void shouldNotGetAllServicesIfContainAKeyValueInName() throws Exception {
+        mvc.perform(
+                get("/services/aaaaa")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+    }
+
 
 }
