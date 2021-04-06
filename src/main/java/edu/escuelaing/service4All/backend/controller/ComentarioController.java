@@ -55,7 +55,8 @@ public class ComentarioController {
     @PostMapping(path="/comentarioNuevo")
     public ResponseEntity<?> addComentario(@RequestBody Comentario comentario){
         try {
-        	comentarioServices.saveComentario(comentario);
+            Comentario nuevo= comentario;
+        	comentarioServices.saveComentario(nuevo);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception ex) {
             Logger.getLogger(ComentarioController.class.getName()).log(Level.SEVERE, null, ex);
