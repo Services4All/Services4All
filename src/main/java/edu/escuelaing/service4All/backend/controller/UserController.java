@@ -28,12 +28,10 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getUsers() {
-        try {
-            return new ResponseEntity<>(new Gson().toJson(userService.findAll()), HttpStatus.OK);
-        } catch (Exception ex) {
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
+    public String getUsers() {
+        
+        return new Gson().toJson(userService.findAll());
+        
     }
 
 }

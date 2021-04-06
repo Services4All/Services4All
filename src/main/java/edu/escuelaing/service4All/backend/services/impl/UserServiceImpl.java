@@ -19,23 +19,7 @@ public class UserServiceImpl implements UserService {
 
     List<User> userList = new ArrayList<User>();
 
-    //@PostConstruct
-    //public void populateUserList(){
-    //    User user = new User();
-    //    user.setId(1000);
-    //    user.setFirstname("Prueba");
-    //    user.setLastname("Prueba");
-    //    user.setEmail("prueba@mail.com");
-    //    user.setCedula("123456789");
-    //    user.setCategory("Medicina");
-    //    user.setCity("Bogotá");
-    //    /**
-    //     * La contraseña es 12345
-    //     */
-    //    user.setPassword("$2y$12$YUmv2F8VQEAdeYxM3.XLAOOt30G1.yXnXYVgwd5eXaz09WHB9wz7G");
-    //    userList.add(user);
-    //}
-
+    
 
     /**
      * Valida que el usuario se encuentre registrado.
@@ -55,16 +39,8 @@ public class UserServiceImpl implements UserService {
         return res;
     }
 
-    /**
-     * Este es el método que implementa el registro del usuario
-     *
-     * @param user
-     * @return
-     */
-    @Override
-    public void saveUser(User user) {
-       
-    }
+ 
+    
 
     /**
      * En caso de encontrase, retorna el usuario según su correo.
