@@ -7,39 +7,42 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import edu.escuelaing.service4All.backend.model.*;
 
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.sql.Date;
+
 import org.springframework.test.context.ActiveProfiles;
 
 
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class ServiceControllerTest {
+public class ComentarioControllerTest {
 
     @Autowired
     private MockMvc mvc;
 
     @Autowired
-	ServiciosServices serviciosService;
+	ComentarioController comentarioController;
 
-    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+
     @Test
-    void getService() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/service").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("services!")));
+    void getAllComentarios() throws Exception {
+        Comentario comentario = new Comentario(1, 1, new Date(0, 0, 0), "sad", 1);
+        comentarioController.findAllComentarios();
+        comentarioController.findAllComentariosById(111);
+        comentarioController.addComentario(comentario);
+      
+    }
+    @Test
+    void getAllComentarioById() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/comentarios/111"));
     }
 
-    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
-    @Test
-    void getAllServices() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/services").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-              
-    }
 
 }
