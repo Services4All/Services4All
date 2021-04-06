@@ -1,9 +1,9 @@
-package edu.escuelaing.service4All.backend.services;
-
-import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
-import edu.escuelaing.service4All.backend.model.User;
+package edu.escuelaing.service4all.backend.services;
 
 import java.util.List;
+
+import edu.escuelaing.service4all.backend.exceptions.Service4AllException;
+import edu.escuelaing.service4all.backend.model.User;
 
 public interface UserService {
     /**

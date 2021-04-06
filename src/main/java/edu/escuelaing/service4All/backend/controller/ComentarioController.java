@@ -1,4 +1,4 @@
-package edu.escuelaing.service4All.backend.controller;
+package edu.escuelaing.service4all.backend.controller;
 
 
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.escuelaing.service4All.backend.model.Comentario;
-import edu.escuelaing.service4All.backend.services.ComentarioServices;
+import edu.escuelaing.service4all.backend.model.Comentario;
+import edu.escuelaing.service4all.backend.services.ComentarioServices;
 
 
 @RestController

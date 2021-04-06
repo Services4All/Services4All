@@ -1,4 +1,4 @@
-package edu.escuelaing.service4All.backend.services;
+package edu.escuelaing.service4all.backend.services;
 
 
 import java.util.List;
@@ -7,8 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.escuelaing.service4All.backend.model.Comentario;
-import edu.escuelaing.service4All.backend.repository.impl.ComentarioRepositoryImpl;
+import edu.escuelaing.service4all.backend.model.Comentario;
+import edu.escuelaing.service4all.backend.repository.impl.ComentarioRepositoryImpl;
 
 
 

@@ -1,7 +1,9 @@
-package edu.escuelaing.service4All.backend.repository;
+package edu.escuelaing.service4all.backend.repository;
 
-import edu.escuelaing.service4All.backend.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import edu.escuelaing.service4all.backend.model.User;
+import edu.escuelaing.service4all.backend.model.User;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package edu.escuelaing.service4All.backend;
+package edu.escuelaing.service4all.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,5 @@
-package edu.escuelaing.service4All.backend.security;
+package edu.escuelaing.service4all.backend.security;
 
-import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
-import edu.escuelaing.service4All.backend.model.User;
-import edu.escuelaing.service4All.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,6 +7,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import edu.escuelaing.service4all.backend.exceptions.Service4AllException;
+import edu.escuelaing.service4all.backend.model.User;
+import edu.escuelaing.service4all.backend.services.UserService;
 
 import java.util.ArrayList;
 import java.util.List;
