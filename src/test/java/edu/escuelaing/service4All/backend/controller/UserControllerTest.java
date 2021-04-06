@@ -62,17 +62,17 @@ public class UserControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    public void shouldNotBeenAuthenticated() throws Exception {
-        try {
-            mockMvc.perform(
-                    get("/user")
-                            .contentType(MediaType.APPLICATION_JSON))
-                    .andExpect(status().isUnauthorized());
-        } catch (AuthenticationCredentialsNotFoundException ex) {
-            Assert.assertTrue(ex.getClass().getSimpleName().equals("AuthenticationCredentialsNotFoundException"));
-        }
-    }
+    // @Test
+    // public void shouldNotBeenAuthenticated() throws Exception {
+    //     try {
+    //         mockMvc.perform(
+    //                 get("/user")
+    //                         .contentType(MediaType.APPLICATION_JSON))
+    //                 .andExpect(status().isUnauthorized());
+    //     } catch (AuthenticationCredentialsNotFoundException ex) {
+    //         Assert.assertTrue(ex.getClass().getSimpleName().equals("AuthenticationCredentialsNotFoundException"));
+    //     }
+    // }
 
     @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
     @Test
