@@ -28,6 +28,7 @@ public class ServicioTest {
 
     @Test
     void creacionServicioSetYGet() throws Exception {
+        Servicio nuevo2=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"asdas");
         Servicio nuevo =new Servicio();
         nuevo.setCategoria("categoria");
         nuevo.setId(1);
@@ -38,6 +39,7 @@ public class ServicioTest {
         nuevo.setDescripcion("descripcion");
         nuevo.getCreationdate();
         nuevo.getId();
+        nuevo.getNombre();
         nuevo.getIdservicio();
         nuevo.getIdusuario();
         assertTrue(nuevo.getCategoria().equals("categoria") && nuevo.getDescripcion().equals("descripcion"));
