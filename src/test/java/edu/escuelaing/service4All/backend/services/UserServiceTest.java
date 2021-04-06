@@ -1,4 +1,4 @@
-package edu.escuelaing.service4all.backend.services;
+package edu.escuelaing.service4All.backend.services;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -10,11 +10,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import edu.escuelaing.service4all.backend.Service4AllApplication;
-import edu.escuelaing.service4all.backend.exceptions.Service4AllException;
-import edu.escuelaing.service4all.backend.model.User;
-import edu.escuelaing.service4all.backend.security.UserDetailsServiceImpl;
-import edu.escuelaing.service4all.backend.services.UserService;
+import edu.escuelaing.service4All.backend.Service4AllApplication;
+import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
+import edu.escuelaing.service4All.backend.model.User;
+import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
+import edu.escuelaing.service4All.backend.services.UserService;
 
 import java.util.List;
 

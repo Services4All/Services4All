@@ -1,4 +1,4 @@
-package edu.escuelaing.service4all.backend.model;
+package edu.escuelaing.service4All.backend.model;
 import java.util.Date;
 
 import javax.persistence.Column;

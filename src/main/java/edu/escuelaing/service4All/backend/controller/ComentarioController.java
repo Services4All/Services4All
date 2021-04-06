@@ -1,4 +1,4 @@
-package edu.escuelaing.service4all.backend.controller;
+package edu.escuelaing.service4All.backend.controller;
 
 
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.escuelaing.service4all.backend.model.Comentario;
-import edu.escuelaing.service4all.backend.services.ComentarioServices;
+import edu.escuelaing.service4All.backend.model.Comentario;
+import edu.escuelaing.service4All.backend.services.ComentarioServices;
 
 
 @RestController
@@ -39,18 +39,5 @@ public class ComentarioController {
         return comentarios;
     }
 	
-    @PostMapping(path="/comentarioNuevo")
-    public void addComentario(Comentario comentario){
- 
-            Comentario persistentComentario= new Comentario();
-            persistentComentario.setComentario(comentario.getComentario());
-            persistentComentario.setFecha(comentario.getFecha());
-            persistentComentario.setId(comentario.getId());
-            persistentComentario.setIdservicio(comentario.getIdservicio());
-            persistentComentario.setIdusuario(comentario.getIdusuario());
-            persistentComentario.setComentario(comentario.getComentario());
-        	comentarioServices.saveComentario(persistentComentario);
-         
-
-    }
+   
 }

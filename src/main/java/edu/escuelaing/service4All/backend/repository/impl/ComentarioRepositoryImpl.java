@@ -1,11 +1,11 @@
-package edu.escuelaing.service4all.backend.repository.impl;
+package edu.escuelaing.service4All.backend.repository.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import edu.escuelaing.service4all.backend.model.Comentario;
-import edu.escuelaing.service4all.backend.repository.ComentarioRepository;
+import edu.escuelaing.service4All.backend.model.Comentario;
+import edu.escuelaing.service4All.backend.repository.ComentarioRepository;
 
 import java.sql.Date;
 import java.time.LocalDate;

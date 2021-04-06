@@ -1,11 +1,11 @@
-package edu.escuelaing.service4all.backend.services;
+package edu.escuelaing.service4All.backend.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.escuelaing.service4all.backend.exceptions.Service4AllException;
-import edu.escuelaing.service4all.backend.model.*;
-import edu.escuelaing.service4all.backend.repository.impl.*;
+import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
+import edu.escuelaing.service4All.backend.model.*;
+import edu.escuelaing.service4All.backend.repository.impl.*;
 
 import java.util.ArrayList;
 import java.util.List;

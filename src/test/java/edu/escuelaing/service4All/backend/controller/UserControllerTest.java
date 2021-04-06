@@ -1,4 +1,4 @@
-package edu.escuelaing.service4all.backend.controller;
+package edu.escuelaing.service4All.backend.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import edu.escuelaing.service4all.backend.Service4AllApplication;
+import edu.escuelaing.service4All.backend.Service4AllApplication;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Service4AllApplication.class)

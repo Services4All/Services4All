@@ -1,4 +1,4 @@
-package edu.escuelaing.service4all.backend.security;
+package edu.escuelaing.service4All.backend.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
