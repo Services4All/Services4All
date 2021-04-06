@@ -56,6 +56,12 @@ public class ComentarioController {
     public void addComentario(Comentario com){
  
             Comentario nuevo= new Comentario();
+            nuevo.setComentario(com.getComentario());
+            nuevo.setFecha(com.getFecha());
+            nuevo.setId(com.getId());
+            nuevo.setIdservicio(com.getIdservicio());
+            nuevo.setIdusuario(com.getIdusuario());
+            nuevo.setComentario(com.getComentario());
         	comentarioServices.saveComentario(nuevo);
          
 
