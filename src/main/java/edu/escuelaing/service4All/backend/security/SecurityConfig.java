@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
 
-        .authorizeRequests()
+        .authorizeRequests().antMatchers("/comentarios/**","/servicio","/servicios","/comentarios").permitAll()
         .anyRequest()
         .authenticated()
         .and()
@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .httpBasic()
         .and()
-        .csrf().ignoringAntMatchers("/user","/user/**","/comentarios/**","/servicio","/servicios","/comentarios");
+        .csrf().disable();
 
     }
 

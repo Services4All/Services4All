@@ -52,7 +52,7 @@ public class ComentarioController {
         return new ResponseEntity<>(comentarios, HttpStatus.ACCEPTED);
     }
 	
-    @PostMapping(path = "/comentarioNuevo")
+    @PostMapping("/comentarioNuevo")
     public ResponseEntity<?> addComentario(@RequestBody Comentario comentario){
         try {
         	comentarioServices.saveComentario(comentario);
