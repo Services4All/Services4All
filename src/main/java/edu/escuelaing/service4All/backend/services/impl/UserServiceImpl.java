@@ -101,16 +101,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-    @Override
-    public User getUserById(int id) {
-        User res = null;
-        for(User user: this.findAll()){
-            if(user.getId() == id){
-                res = user;
-            }
-        }
-        return res;
-    }
 
 
 }

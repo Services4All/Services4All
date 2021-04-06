@@ -31,14 +31,6 @@ public class ServiceController {
         return serviciosService.findAllServices();
     }
 
-    @GetMapping("/services/correo/{correo}")
-    public ResponseEntity<?> getAllServicesByCorreo(@PathVariable String correo){
-        try{
-            return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllServicesByCorreo(correo)), HttpStatus.OK);
-        }catch (Exception ex){
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
-    }
 
     @GetMapping("/service/{id}")
     public ResponseEntity<?> getServiceById(@PathVariable int id){

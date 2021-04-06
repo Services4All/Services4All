@@ -22,6 +22,4 @@ public interface UserService {
 
     public List<User> findAll();
 
-    public User getUserById(int id);
-
 }

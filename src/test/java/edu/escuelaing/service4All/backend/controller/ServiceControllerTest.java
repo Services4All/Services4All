@@ -45,16 +45,6 @@ public class ServiceControllerTest {
 
     @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
     @Test
-    void shouldGetAllServicesByCorreo() throws Exception {
-        mvc.perform(
-                get("/services/correo/prueba@mail.com")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
-
-    }
-
-    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
-    @Test
     void shouldGetServiceById() throws Exception {
         mvc.perform(
                 get("/service/79")
@@ -70,16 +60,6 @@ public class ServiceControllerTest {
                 get("/services/a")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-    }
-
-    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
-    @Test
-    void shouldNotGetAllServicesByCorreo() throws Exception {
-        mvc.perform(
-                get("/services/correo/prueba@mail.com")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
-
     }
 
     @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")

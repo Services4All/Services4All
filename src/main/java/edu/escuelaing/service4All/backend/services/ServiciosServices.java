@@ -16,9 +16,6 @@ public class ServiciosServices {
     @Autowired
     private ServicioRepositoryImpl servicio;
 
-    @Autowired
-    private UserService userService;
-
     public List<Servicio> findAllServices(){
         return servicio.findAllServices();
     }
@@ -32,17 +29,6 @@ public class ServiciosServices {
         }
         if(servicio == null) throw new Service4AllException(Service4AllException.SERVICIO_NO_EXISTE);
         return servicio;
-    }
-
-    public List<Servicio> findAllServicesByCorreo(String correo) throws Service4AllException {
-        List<Servicio> servicios = new ArrayList<Servicio>();
-        for(Servicio servicio: findAllServices()){
-            if(userService.getUserById(servicio.getIdusuario()).getEmail().equals(correo)){
-                servicios.add(servicio);
-            }
-        }
-        if(servicios.isEmpty()) throw new Service4AllException(Service4AllException.SERVICIOS_NO_ASOCIADOS);
-        return servicios;
     }
 
     public List<Servicio> findAllServicesIfContainAKeyValueInName(String value) throws Service4AllException {
