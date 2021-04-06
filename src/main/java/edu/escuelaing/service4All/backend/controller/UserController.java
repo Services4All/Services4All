@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.services.UserService;
 
-import edu.escuelaing.service4All.backend.services.UserService;
 
 @Controller
 @RequestMapping("/user")
@@ -19,14 +19,12 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/{correo}", method = RequestMethod.GET)
-    public ResponseEntity<?> getUser(@PathVariable String correo) {
-        try {
+    @GetMapping(path="/{correo}")
+    public String getUser(@PathVariable String correo) throws Service4AllException {
+        
             userService.isRegister(userService.getUserByCorreo(correo));
-            return new ResponseEntity<>(new Gson().toJson(userService.getUserByCorreo(correo)), HttpStatus.OK);
-        } catch (Exception ex) {
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
+            return new Gson().toJson(userService.getUserByCorreo(correo));
+        
     }
 
     @GetMapping

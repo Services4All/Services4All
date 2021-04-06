@@ -6,7 +6,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import edu.escuelaing.service4All.backend.controller.ComentarioController;
 import edu.escuelaing.service4All.backend.model.*;
 
 import java.sql.Date;

@@ -45,14 +45,14 @@ public class UserControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
-    @Test
-    public void shouldNotGetUserByCorreo() throws Exception {
-        mockMvc.perform(
-                get("/user/fallo@mail.com")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
-    }
+//     @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
+//     @Test
+//     public void shouldNotGetUserByCorreo() throws Exception {
+//         mockMvc.perform(
+//                 get("/user/fallo@mail.com")
+//                         .contentType(MediaType.APPLICATION_JSON))
+//                 .andExpect(status().isNotFound());
+//     }
 
     @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
     @Test

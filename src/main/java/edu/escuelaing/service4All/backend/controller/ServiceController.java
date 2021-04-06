@@ -9,12 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.*;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 
@@ -36,21 +36,15 @@ public class ServiceController {
 
 
     @GetMapping("/service/{id}")
-    public ResponseEntity<?> getServiceById(@PathVariable int id){
-        try{
-            return new ResponseEntity<>(new Gson().toJson(serviciosService.findServiceById(id)), HttpStatus.OK);
-        }catch (Exception ex){
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
+    public  String getServiceById(@PathVariable int id) throws Service4AllException{
+ 
+            return new Gson().toJson(serviciosService.findServiceById(id));
+       
     }
 
     @GetMapping("/services/{value}")
-    public ResponseEntity<?> getAllServicesIfContainAKeyValueInName(@PathVariable String value){
-        try{
-            return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllServicesIfContainAKeyValueInName(value)), HttpStatus.OK);
-        }catch (Exception ex){
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
+    public  String getAllServicesIfContainAKeyValueInName(@PathVariable String value) throws Service4AllException{
+        return new Gson().toJson(serviciosService.findAllServicesIfContainAKeyValueInName(value));
     }
 
 }
