@@ -29,40 +29,34 @@ public class ComentarioController {
 	ComentarioServices comentarioServices;
 	
     @GetMapping
-    public  ResponseEntity<?>  findAllComentarios() {
+    public List<Comentario>   findAllComentarios() {
         List<Comentario> comentarios = null;
-        try {
+      
             comentarios = comentarioServices.findAllComentarios();
-        } catch (Exception ex) {
-        	Logger.getLogger(ComentarioController.class.getName()).log(Level.SEVERE, null, ex);
-            return new ResponseEntity<>("Error 404",HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(comentarios, HttpStatus.ACCEPTED);
+      
+        return comentarios;
     }
 
 	@GetMapping(path="/{id}")
-    public  ResponseEntity<?>  findAllComentariosById(@PathVariable int id) {
+    public  Optional<Comentario>  findAllComentariosById(@PathVariable int id) {
         Optional<Comentario> comentarios;
-        try {
+     
             comentarios = comentarioServices.findAllComentariosById(id);
-        } catch (Exception ex) {
-        	Logger.getLogger(ComentarioController.class.getName()).log(Level.SEVERE, null, ex);
-            return new ResponseEntity<>("Error 404",HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(comentarios, HttpStatus.ACCEPTED);
+        
+        return comentarios;
     }
 	
     @PostMapping(path="/comentarioNuevo")
-    public void addComentario(Comentario com){
+    public void addComentario(Comentario comentario){
  
-            Comentario nuevo= new Comentario();
-            nuevo.setComentario(com.getComentario());
-            nuevo.setFecha(com.getFecha());
-            nuevo.setId(com.getId());
-            nuevo.setIdservicio(com.getIdservicio());
-            nuevo.setIdusuario(com.getIdusuario());
-            nuevo.setComentario(com.getComentario());
-        	comentarioServices.saveComentario(nuevo);
+            Comentario persistentComentario= new Comentario();
+            persistentComentario.setComentario(comentario.getComentario());
+            persistentComentario.setFecha(comentario.getFecha());
+            persistentComentario.setId(comentario.getId());
+            persistentComentario.setIdservicio(comentario.getIdservicio());
+            persistentComentario.setIdusuario(comentario.getIdusuario());
+            persistentComentario.setComentario(comentario.getComentario());
+        	comentarioServices.saveComentario(persistentComentario);
          
 
     }

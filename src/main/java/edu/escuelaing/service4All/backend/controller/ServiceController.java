@@ -26,14 +26,14 @@ public class ServiceController {
     }
     @PostMapping("/newService")
     public void newService(Servicio servicio) {
-        Servicio nuevo=new Servicio();
-        nuevo.setCategoria(servicio.getCategoria());
-        nuevo.setId(servicio.getId());
-        nuevo.setIdusuario(servicio.getIdusuario());
-        nuevo.setCreationdate(servicio.getCreationdate());
-        nuevo.setIdservicio(servicio.getIdservicio());
-        nuevo.setNombre(servicio.getNombre());
-        nuevo.setDescripcion(servicio.getDescripcion());
-        serviciosService.saveServicio(nuevo);
+        Servicio persistentServicio=new Servicio();
+        persistentServicio.setCategoria(servicio.getCategoria());
+        persistentServicio.setId(servicio.getId());
+        persistentServicio.setIdusuario(servicio.getIdusuario());
+        persistentServicio.setCreationdate(servicio.getCreationdate());
+        persistentServicio.setIdservicio(servicio.getIdservicio());
+        persistentServicio.setNombre(servicio.getNombre());
+        persistentServicio.setDescripcion(servicio.getDescripcion());
+        serviciosService.saveServicio(persistentServicio);
     }
 }

@@ -8,10 +8,14 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import edu.escuelaing.service4All.backend.model.Servicio;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.sql.Date;
+
 import org.springframework.test.context.ActiveProfiles;
 
 
@@ -26,6 +30,9 @@ public class ServiceControllerTest {
     @Autowired
 	ServiciosServices serviciosService;
 
+    @Autowired
+    ServiceController serviceController;
+
     @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
     @Test
     void getService() throws Exception {
@@ -39,6 +46,13 @@ public class ServiceControllerTest {
     void getAllServices() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/services").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
+              
+    }
+
+    @Test
+    void addService() throws Exception {
+        Servicio nuevo2=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"asdas");
+        serviceController.newService(nuevo2);
               
     }
 
