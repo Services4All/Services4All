@@ -77,7 +77,7 @@ public class UserServiceTest {
     @Test
     public void shouldCreateUserWithConstructor(){
         User user = new User(1, "Prueba", "Prueba", "prueba@mail.com", "12345", "Zapatos", "Bogotá", "123456789");
-        Assert.assertTrue(user.getId()==1);
+        Assert.assertEquals(user.getId(),1);
     }
 
     @Test
