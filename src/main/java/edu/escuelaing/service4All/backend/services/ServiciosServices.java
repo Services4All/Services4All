@@ -18,6 +18,10 @@ public class ServiciosServices {
         return servicio.findAllServices();
     }
 
+    public void saveServicio(Servicio newServicio) {
+        servicio.saveServicio(newServicio);
+    }
+
  
 	
 
