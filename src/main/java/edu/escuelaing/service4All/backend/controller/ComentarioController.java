@@ -40,7 +40,7 @@ public class ComentarioController {
         return new ResponseEntity<>(comentarios, HttpStatus.ACCEPTED);
     }
 
-	@RequestMapping(value="/{id}", method = RequestMethod.GET)
+	@GetMapping(path="/{id}")
     public  ResponseEntity<?>  findAllComentariosById(@PathVariable int id) {
         Optional<Comentario> comentarios;
         try {
@@ -52,7 +52,7 @@ public class ComentarioController {
         return new ResponseEntity<>(comentarios, HttpStatus.ACCEPTED);
     }
 	
-    @PostMapping("/comentarioNuevo")
+    @PostMapping(path="/comentarioNuevo")
     public ResponseEntity<?> addComentario(@RequestBody Comentario comentario){
         try {
         	comentarioServices.saveComentario(comentario);
