@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,7 +42,7 @@ public class ComentarioController {
 
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
     public  ResponseEntity<?>  findAllComentariosById(@PathVariable int id) {
-        Optional<Comentario> comentarios = null;
+        Optional<Comentario> comentarios;
         try {
             comentarios = comentarioServices.findAllComentariosById(id);
         } catch (Exception ex) {
@@ -51,7 +52,7 @@ public class ComentarioController {
         return new ResponseEntity<>(comentarios, HttpStatus.ACCEPTED);
     }
 	
-	@RequestMapping(value="/comentarioNuevo",method = RequestMethod.POST)
+    @PostMapping(path = "/comentarioNuevo")
     public ResponseEntity<?> addComentario(@RequestBody Comentario comentario){
         try {
         	comentarioServices.saveComentario(comentario);
