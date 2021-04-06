@@ -9,6 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.Date;
 import edu.escuelaing.service4All.backend.model.*;
+import edu.escuelaing.service4All.backend.services.ComentarioServices;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertTrue;
@@ -25,9 +26,12 @@ public class ComentarioTest {
     @Autowired
     private MockMvc mvc;
 
+    @Autowired
+    ComentarioServices comentarioServices;
+
 
     @Test
-    void creacionServicioSetYGet() throws Exception {
+    void creacionComentarioSetYGet() throws Exception {
         Comentario nuevo =new Comentario();
         nuevo.setComentario("comentario");
         nuevo.setFecha(new Date(0,0,0));
@@ -38,5 +42,10 @@ public class ComentarioTest {
       
         assertTrue(nuevo.getId()==1 && nuevo.getIdservicio()==1 && nuevo.getComentario().equals("comentario"));
     }
+    @Test
+    void creacionComentarioServicesSetYGet() throws Exception {
+       
+    }
+
 
 }
