@@ -1,5 +1,8 @@
 package edu.escuelaing.service4All.backend.controller;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.google.gson.Gson;
 
 import com.google.gson.JsonElement;
@@ -35,6 +38,17 @@ public class UserController {
             return new ResponseEntity<>(new Gson().toJson(userService.findAll()), HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PostMapping(value = "/registrar")
+    public ResponseEntity<?> saveUser(@RequestBody User user) {
+        try {
+            userService.saveUser(user);
+            return new ResponseEntity<>( HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, e);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
