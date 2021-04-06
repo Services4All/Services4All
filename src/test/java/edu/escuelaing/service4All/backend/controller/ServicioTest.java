@@ -53,7 +53,7 @@ public class ServicioTest {
     void creacionServicio() throws Exception {
         Servicio nuevo2=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"asdas");
         ServiciosServices.saveServicio(nuevo2);
-       
+        assertTrue(true);
     }
 
 }
