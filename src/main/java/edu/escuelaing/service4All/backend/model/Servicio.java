@@ -19,7 +19,10 @@ public class Servicio {
 	
 	@Column(name = "idusuario")
     private int idusuario; //vendedor
-	
+
+    @Column(name = "idservicio")
+    private int idservicio;
+
 	@Column(name = "descripcion")
     private String descripcion;
 	
@@ -33,9 +36,10 @@ public class Servicio {
     private String categoria;
 	
 
-    public Servicio(int id, int idVendedor, String nombre, String descripcion, Date creacion, String categoria) {
+    public Servicio(int id, int idUsuario,int idServicio, String nombre, String descripcion, Date creacion, String categoria) {
         this.id = id;
-        this.idusuario = idVendedor;
+        this.idusuario = idUsuario;
+        this.idservicio=idServicio;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.creationdate = creacion;
@@ -43,46 +47,35 @@ public class Servicio {
     public Servicio() {
     	
     }
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
-    public int getIdVendedor() {
+    public int getIdusuario() {
         return idusuario;
     }
-
-    public void setIdVendedor(int idVendedor) {
-        this.idusuario = idVendedor;
+    public void setIdusuario(int idusuario) {
+        this.idusuario = idusuario;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
-
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-
-    public Date getCreacion() {
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public Date getCreationdate() {
         return creationdate;
     }
-
-    public void setCreacion(Date creacion) {
-        this.creationdate = creacion;
+    public void setCreationdate(Date creationdate) {
+        this.creationdate = creationdate;
     }
     public String getCategoria() {
         return categoria;
@@ -90,4 +83,11 @@ public class Servicio {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+    public int getIdservicio() {
+        return idservicio;
+    }
+    public void setIdservicio(int idservicio) {
+        this.idservicio = idservicio;
+    }
+
 }

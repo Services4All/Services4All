@@ -1,5 +1,4 @@
 package edu.escuelaing.service4All.backend.controller;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -8,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import edu.escuelaing.service4All.backend.services.*;
+
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -21,16 +20,16 @@ import org.springframework.test.context.ActiveProfiles;
 @AutoConfigureMockMvc
 public class ComentarioControllerTest {
 
+    @Autowired
     private MockMvc mvc;
 
     @Autowired
-	ComentarioServices comentarioService;
+	ServiciosServices serviciosService;
 
-    
+
     @Test
-    void getService() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/comentarios").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+    void getAllServices() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/comentarios"));
               
     }
 

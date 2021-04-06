@@ -33,21 +33,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
-        .antMatchers("/comentarios","/comentarios/**").permitAll()
-        .anyRequest().authenticated()
+        http
+        .authorizeRequests()
+        .anyRequest()
+        .authenticated()
         .and()
-    .formLogin()
-        .failureUrl("/login?error")
-        .usernameParameter("username")
-        .passwordParameter("password")
+        .formLogin()
         .and()
-    .logout()
-        .permitAll()
-        .logoutSuccessUrl("/login?logout")
+        .httpBasic()
         .and()
-    .cors().and().
-    csrf().disable();
+        .csrf().ignoringAntMatchers("/user","/user/**","/comentarios/**","/servicio","/servicios","/comentarios");
+
     }
 
 
