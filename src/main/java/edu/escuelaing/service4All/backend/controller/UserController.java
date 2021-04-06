@@ -2,6 +2,8 @@ package edu.escuelaing.service4All.backend.controller;
 
 import com.google.gson.Gson;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,13 @@ public class UserController {
         }
     }
 
+    @PostMapping("/saludo")
+    public ResponseEntity<?> saludoPost(){
+        System.out.println("Hola Mundo desde Spring Boot");
+        JsonParser parser = new JsonParser();
+        JsonElement jsonElement = parser.parse("{\"message\":\"Hi\",\"place\":{\"name\":\"World!\"}}");
+        return new ResponseEntity<>(new Gson().toJson(jsonElement), HttpStatus.OK);
+    }
     
 
 }
