@@ -1,12 +1,9 @@
 package edu.escuelaing.service4All.backend.controller;
 
 import com.google.gson.Gson;
-import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.*;
 import java.util.List;
 
-
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,15 +33,15 @@ public class ServiceController {
     }
     @PostMapping("/newService")
     public void newService(Servicio servicio) {
-        Servicio persistentServicio=new Servicio();
-        persistentServicio.setCategoria(servicio.getCategoria());
-        persistentServicio.setId(servicio.getId());
-        persistentServicio.setIdusuario(servicio.getIdusuario());
-        persistentServicio.setCreationdate(servicio.getCreationdate());
-        persistentServicio.setIdservicio(servicio.getIdservicio());
-        persistentServicio.setNombre(servicio.getNombre());
-        persistentServicio.setDescripcion(servicio.getDescripcion());
-        serviciosService.saveServicio(persistentServicio);
+        // Servicio persistentServicio=new Servicio();
+        // persistentServicio.setCategoria(servicio.getCategoria());
+        // persistentServicio.setId(servicio.getId());
+        // persistentServicio.setIdusuario(servicio.getIdusuario());
+        // persistentServicio.setCreationdate(servicio.getCreationdate());
+        // persistentServicio.setIdservicio(servicio.getIdservicio());
+        // persistentServicio.setNombre(servicio.getNombre());
+        // persistentServicio.setDescripcion(servicio.getDescripcion());
+        serviciosService.saveServicio(servicio);
     }
 
 
