@@ -7,9 +7,11 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
+import java.util.Date;
+import edu.escuelaing.service4All.backend.model.*;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.springframework.test.context.ActiveProfiles;
@@ -18,23 +20,23 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class ComentarioControllerTest {
+public class ComentarioTest {
 
     @Autowired
     private MockMvc mvc;
 
-    @Autowired
-	ServiciosServices serviciosService;
-
 
     @Test
-    void getAllComentarios() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/comentarios"));
+    void creacionServicioSetYGet() throws Exception {
+        Comentario nuevo =new Comentario();
+        nuevo.setComentario("comentario");
+        nuevo.setFecha(new Date(0,0,0));
+        nuevo.setId(1);
+        nuevo.setIdservicio(1);
+        nuevo.setIdusuario(1);
+        nuevo.getFecha();
+      
+        assertTrue(nuevo.getId()==1 && nuevo.getIdservicio()==1 && nuevo.getComentario().equals("comentario"));
     }
-    @Test
-    void getAllComentarioById() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/comentarios/111"));
-    }
-
 
 }
