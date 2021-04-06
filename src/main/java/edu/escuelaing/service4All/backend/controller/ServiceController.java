@@ -26,7 +26,7 @@ public class ServiceController {
     }
     @PostMapping("/newService")
     public void newService(Servicio servicio) {
-        Servicio newServicio=servicio;
+        Servicio newServicio=new Servicio();
         serviciosService.saveServicio(newServicio);
     }
 }

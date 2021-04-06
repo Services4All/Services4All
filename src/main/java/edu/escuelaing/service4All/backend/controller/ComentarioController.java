@@ -55,7 +55,7 @@ public class ComentarioController {
     @PostMapping(path="/comentarioNuevo")
     public void addComentario(Comentario com){
  
-            Comentario nuevo= com;
+            Comentario nuevo= new Comentario();
         	comentarioServices.saveComentario(nuevo);
          
 
