@@ -85,6 +85,13 @@ public class UserServiceTest {
         UserDetails userDetails = this.userDetailsService.loadUserByUsername("prueba@mail.com");
         Assert.assertTrue(userDetails.getUsername().equals("Prueba"));
     }
+    @Test
+    public void shouldLoadUserByUserghname(){
+        User user = new User(1, "Prueba", "Prueba", "prueba@mail.com", "12345", "Zapatos", "Bogotá", "123456789");
+        user.pruebaXD();
+        Assert.assertTrue(true);
+    }
+
 
 
 }
