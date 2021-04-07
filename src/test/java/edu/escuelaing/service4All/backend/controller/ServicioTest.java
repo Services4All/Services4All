@@ -5,17 +5,20 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
+import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.model.Servicio;
 import edu.escuelaing.service4All.backend.repository.impl.ServicioRepositoryImpl;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 
+
 import java.util.Date;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.springframework.test.context.ActiveProfiles;
 
 
-@SpringBootTest
+@SpringBootTest(classes = Service4AllApplication.class)
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
 public class ServicioTest {
@@ -53,6 +56,16 @@ public class ServicioTest {
     void creacionServicio() throws Exception {
         Servicio nuevo2=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"asdas");
         ServiciosServices.saveService(nuevo2);
+    }
+
+    @Test
+    void putServicio() throws Exception {
+        Servicio a = ServiciosServices.findServiceById(79);
+        a.setDescripcion("Nueva");
+        ServiciosServices.update(a);
+        String x = a.getDescripcion();
+        String b = "Nueva";
+        assertEquals(x,b);
     }
 
 }

@@ -49,6 +49,12 @@ public class ServiciosServices {
         servicio.saveService(newServicio);
 
     }
+
+    public void update(Servicio servi) throws Service4AllException {
+        Servicio s = findServiceById(servi.getId());
+		s.setDescripcion(servi.getDescripcion());
+		servicio.saveService(s);
+    }
  
 	
 
