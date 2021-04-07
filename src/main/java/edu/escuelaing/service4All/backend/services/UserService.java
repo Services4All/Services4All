@@ -14,7 +14,7 @@ public interface UserService {
      */
     public User isRegister(User user) throws Service4AllException;
 
-    public void saveUser(User user);
+    public User saveUser(User user);
 
     public User getUserByCorreo(String correo) throws Service4AllException;
 
