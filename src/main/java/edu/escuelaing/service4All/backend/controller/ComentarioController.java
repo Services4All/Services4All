@@ -52,12 +52,15 @@ public class ComentarioController {
         return new ResponseEntity<>(comentarios, HttpStatus.ACCEPTED);
     }
 	
-    @PostMapping(path="/comentarioNuevo")
-    public void addComentario(Comentario comentario){
- 
-            Comentario nuevo= comentario;
-        	comentarioServices.saveComentario(nuevo);
-         
+	@RequestMapping(value="/comentarioNuevo",method = RequestMethod.POST)
+    public ResponseEntity<?> addUser(@RequestBody Comentario comentario){
+        try {
+        	comentarioServices.saveComentario(comentario);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (Exception ex) {
+            Logger.getLogger(ComentarioController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+        }
 
     }
 }
