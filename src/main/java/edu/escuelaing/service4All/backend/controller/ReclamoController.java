@@ -36,5 +36,17 @@ public class ReclamoController {
        return reclamos;
     }
 
+    
+	@RequestMapping(value="/addReclamo",method = RequestMethod.POST)
+    public ResponseEntity<?> addReclamo(@RequestBody Reclamo reclamo){
+        try {
+        	reclamoServices.saveComentario(reclamo);;
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (Exception ex) {
+            Logger.getLogger(ReclamoController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+        }
+
+    }
    
 }
