@@ -32,10 +32,10 @@ public class ServiciosServices {
     }
 
     public List<Servicio> findAllServicesIfContainAKeyValueInName(String value) throws Service4AllException {
-        List<Servicio> servicios = new ArrayList<Servicio>();
-        for(Servicio servicio: findAllServices()){
-            if(servicio.getNombre().contains(value)){
-                servicios.add(servicio);
+        List<Servicio> servicios = new ArrayList<>();
+        for(Servicio service: findAllServices()){
+            if(service.getNombre().contains(value)){
+                servicios.add(service);
             }
         }
         if(servicios.isEmpty()) throw new Service4AllException(Service4AllException.SERVICIOS_NO_ASOCIADOS);
