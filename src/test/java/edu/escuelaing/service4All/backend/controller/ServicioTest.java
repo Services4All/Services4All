@@ -9,6 +9,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.Date;
 import edu.escuelaing.service4All.backend.model.Servicio;
+import edu.escuelaing.service4All.backend.repository.impl.ServicioRepositoryImpl;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertTrue;
@@ -25,6 +26,11 @@ public class ServicioTest {
     @Autowired
     private MockMvc mvc;
 
+    @Autowired
+    ServiciosServices serviciosServices;
+
+    @Autowired
+    ServicioRepositoryImpl servicioRepositoryImpl;
 
     @Test
     void creacionServicioSetYGet() throws Exception {
@@ -43,6 +49,13 @@ public class ServicioTest {
         nuevo.getIdservicio();
         nuevo.getIdusuario();
         assertTrue(nuevo.getCategoria().equals("categoria") && nuevo.getDescripcion().equals("descripcion"));
+    }
+
+    @Test
+    void testService() throws Exception{
+        Servicio nuevo2=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"asdas");
+        serviciosServices.saveService(nuevo2);
+        servicioRepositoryImpl.saveService(nuevo2);
     }
 
 }

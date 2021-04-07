@@ -41,6 +41,11 @@ public class ServiciosServices {
         if(servicios.isEmpty()) throw new Service4AllException(Service4AllException.SERVICIOS_NO_ASOCIADOS);
         return servicios;
     }
+
+    public void saveService(Servicio newServicio){
+        servicio.saveService(newServicio);
+
+    }
  
 	
 
