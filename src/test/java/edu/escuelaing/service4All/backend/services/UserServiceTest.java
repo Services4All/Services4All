@@ -36,33 +36,37 @@ public class UserServiceTest {
         Assert.assertTrue(user.getEmail().equals("prueba@mail.com"));
     }
     @Test
-    public void shouldBeRegistered() throws Service4AllException {
+    void shouldBeRegistered() throws Service4AllException {
         User user = userService.findUserByName("Prueba");
         User userRegistered = userService.isRegister(user);
-        Assert.assertTrue(userRegistered.getFirstname().equals("Prueba"));
+        String a = userRegistered.getFirstname();
+        String b = "Prueba";
+        Assert.assertEquals(a,b);
     }
 
     @Test
-    public void shouldFindUserByCorreo() throws Service4AllException {
+    void shouldFindUserByCorreo() throws Service4AllException {
         User user = userService.getUserByCorreo("prueba@mail.com");
-        Assert.assertEquals(user.getFirstname(),"Prueba");
+        String a = user.getFirstname();
+        String b = "Prueba";
+        Assert.assertEquals(a,b);
     }
 
     @Test
-    public void shouldFindAllUsers() throws Service4AllException {
+    void shouldFindAllUsers() throws Service4AllException {
         List<User> users = userService.findAll();
         Assert.assertTrue(users.size()>=0);
     }
 
     @Test
-    public void shouldsave() throws Service4AllException {
+    void shouldsave() throws Service4AllException {
         userService.saveUser(userService.getUserByCorreo("prueba@mail.com"));
         List<User> users = userService.findAll();
         Assert.assertTrue(users.size()>=0);
     }
 
     @Test
-    public void shouldCreateUser() {
+    void shouldCreateUser() {
         User user = new User();
         user.setId(1);
         user.setPassword("123456789");
@@ -76,15 +80,17 @@ public class UserServiceTest {
     }
 
     @Test
-    public void shouldCreateUserWithConstructor(){
+    void shouldCreateUserWithConstructor(){
         User user = new User(1, "Prueba", "Prueba", "prueba@mail.com", "12345", "Zapatos", "Bogotá", "123456789");
         Assert.assertTrue(true);
     }
 
     @Test
-    public void shouldLoadUserByUsername(){
+    void shouldLoadUserByUsername(){
         UserDetails userDetails = this.userDetailsService.loadUserByUsername("prueba@mail.com");
-        Assert.assertTrue(userDetails.getUsername().equals("Prueba"));
+        String a = userDetails.getUsername();
+        String b = "Prueba";
+        Assert.assertEquals(a,b);
     }
 
 
