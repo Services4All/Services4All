@@ -23,7 +23,7 @@ public class ReclamoRepositoryImpl{
     public void saveReclamo(Reclamo reclamo) {
     	LocalDate creationDate = LocalDate.now();
 		  
-		reclamo.setFecha(Date.valueOf(creationDate));
+		reclamo.setCreationdate(Date.valueOf(creationDate));
         reclamoRepository.save(reclamo);
     }
 	

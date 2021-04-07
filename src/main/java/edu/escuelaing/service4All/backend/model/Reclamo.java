@@ -23,36 +23,30 @@ public class Reclamo {
     private int idusuario;
 	
 	@Column(name = "creationdate")
-    private Date fecha;
+    private Date creationdate;
 	
 	@Column(name = "reclamo")
     private String reclamo;
 
-    public Reclamo(int idservicio, int idusuario, Date fecha, String reclamo, int id) {
-        this.idservicio= idservicio;
-        this.idusuario = idusuario;
-        this.reclamo = reclamo;
-        this.fecha = fecha;
-        this.id = id;
-    }
+    
     public Reclamo() {
     	
     }
-
-    public int getIdservicio() {
-        return idservicio;
+    public Reclamo( int idusuario,int idservicio, Date creationdate, String reclamo, int id) {
+        this.idservicio= idservicio;
+        this.idusuario = idusuario;
+        this.reclamo = reclamo;
+        this.creationdate = creationdate;
+        this.id = id;
     }
+
+    public int getId() {
+        return id;
+    }
+
 
     public void setIdservicio(int idservicio) {
         this.idservicio = idservicio;
-    }
-
-    public int getIdusuario() {
-        return idusuario;
-    }
-
-    public void setIdusuario(int idusuario) {
-        this.idusuario = idusuario;
     }
 
     public String getReclamo() {
@@ -63,18 +57,30 @@ public class Reclamo {
         this.reclamo = reclamo;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public Date getCreatioDate() {
+        return creationdate;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+
+    public void setCreationdate(Date creationdate) {
+        this.creationdate = creationdate;
     }
-    public int getId() {
-        return id;
+    
+    public int getIdusuario() {
+        return idusuario;
     }
 
+    public void setIdusuario(int idusuario) {
+        this.idusuario = idusuario;
+    }
+
+    
     public void setId(int id) {
         this.id = id;
     }
+
+    public int getIdservicio() {
+        return idservicio;
+    }
+   
 }
