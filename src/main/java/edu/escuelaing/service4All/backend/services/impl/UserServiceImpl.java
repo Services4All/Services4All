@@ -63,7 +63,10 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void saveUser(User user) {
-       
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
+        /*modificar el password para que sea seguro*/
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
     }
 
     /**

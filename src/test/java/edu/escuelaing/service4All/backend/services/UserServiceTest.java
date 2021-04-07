@@ -14,7 +14,6 @@ import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
-import edu.escuelaing.service4All.backend.services.UserService;
 
 import java.util.List;
 
@@ -56,6 +55,13 @@ public class UserServiceTest {
 
     @Test
     public void shouldFindAllUsers() throws Service4AllException {
+        List<User> users = userService.findAll();
+        Assert.assertTrue(users.size()>=0);
+    }
+
+    @Test
+    public void shouldsave() throws Service4AllException {
+        userService.saveUser(userService.getUserByCorreo("prueba@mail.com"));
         List<User> users = userService.findAll();
         Assert.assertTrue(users.size()>=0);
     }
