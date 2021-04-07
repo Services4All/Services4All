@@ -14,7 +14,6 @@ import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
-import edu.escuelaing.service4All.backend.services.UserService;
 
 import java.util.List;
 
@@ -78,6 +77,13 @@ public class UserServiceTest {
     public void shouldCreateUserWithConstructor(){
         User user = new User(1, "Prueba", "Prueba", "prueba@mail.com", "12345", "Zapatos", "Bogotá", "123456789");
         Assert.assertTrue(true);
+    }
+
+    @Test
+    public void shouldSaveUser() throws Service4AllException{
+        User user = new User(4000, "Prueba", "Prueba", "prueba@mail.com", "12345", "vendedor", "Bogotá", "123456789");
+        User newer =userService.saveUser(user);
+        Assert.assertTrue(newer.getCedula()=="12345");
     }
 
     @Test

@@ -1,13 +1,8 @@
 package edu.escuelaing.service4All.backend.controller;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import com.google.gson.Gson;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,17 +33,6 @@ public class UserController {
             return new ResponseEntity<>(new Gson().toJson(userService.findAll()), HttpStatus.OK);
         } catch (Exception ex) {
             return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @PostMapping(value = "/registrar")
-    public ResponseEntity<User> reservar(@RequestBody User user) {
-        try {
-            User nuevo = userService.saveUser(user);
-            return new ResponseEntity(nuevo,HttpStatus.CREATED);
-        } catch (Exception e) {
-            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, e);
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
