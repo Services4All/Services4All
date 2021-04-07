@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-    List<User> userList = new ArrayList<User>();
+    List<User> userList = new ArrayList<>();
 
 
     /**
