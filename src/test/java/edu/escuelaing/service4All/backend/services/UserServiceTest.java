@@ -1,9 +1,9 @@
-package edu.escuelaing.service4All.backend.services;
+package edu.escuelaing.service4all.backend.services;
 
-import edu.escuelaing.service4All.backend.Service4AllApplication;
-import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
-import edu.escuelaing.service4All.backend.model.User;
-import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
+import edu.escuelaing.service4all.backend.Service4AllApplication;
+import edu.escuelaing.service4all.backend.exceptions.Service4AllException;
+import edu.escuelaing.service4all.backend.model.User;
+import edu.escuelaing.service4all.backend.security.UserDetailsServiceImpl;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;

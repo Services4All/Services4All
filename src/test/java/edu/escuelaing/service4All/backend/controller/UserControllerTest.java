@@ -1,9 +1,9 @@
-package edu.escuelaing.service4All.backend.controller;
+package edu.escuelaing.service4all.backend.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import edu.escuelaing.service4All.backend.Service4AllApplication;
+import edu.escuelaing.service4all.backend.Service4AllApplication;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;

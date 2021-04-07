@@ -1,4 +1,4 @@
-package edu.escuelaing.service4All.backend.controller;
+package edu.escuelaing.service4all.backend.controller;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -8,8 +8,8 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import java.util.Date;
-import edu.escuelaing.service4All.backend.model.Servicio;
-import edu.escuelaing.service4All.backend.services.ServiciosServices;
+import edu.escuelaing.service4all.backend.model.Servicio;
+import edu.escuelaing.service4all.backend.services.ServiciosServices;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
