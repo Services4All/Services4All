@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -45,7 +45,7 @@ public class UserController {
     public ResponseEntity<?> saveUser(@RequestBody User user) {
         try {
             userService.saveUser(user);
-            return new ResponseEntity<>( HttpStatus.ACCEPTED);
+            return new ResponseEntity<>( HttpStatus.OK);
         } catch (Exception e) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, e);
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
