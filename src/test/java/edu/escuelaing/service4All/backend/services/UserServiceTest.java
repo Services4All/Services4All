@@ -45,7 +45,7 @@ public class UserServiceTest {
     @Test
     public void shouldFindUserByCorreo() throws Service4AllException {
         User user = userService.getUserByCorreo("prueba@mail.com");
-        Assert.assertTrue(user.getFirstname().equals("Prueba"));
+        Assert.assertEquals(user.getFirstname(),"Prueba");
     }
 
     @Test
