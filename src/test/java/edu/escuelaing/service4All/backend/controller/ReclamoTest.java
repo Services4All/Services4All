@@ -37,7 +37,7 @@ public class ReclamoTest {
         nuevo.setIdusuario(1);
         nuevo.getCreatioDate();
         nuevo.getIdusuario();
-
+        nuevo.getReclamo();
         assertTrue(nuevo.getId() == 1 && nuevo.getIdservicio() == 1);
     }
 
@@ -46,6 +46,8 @@ public class ReclamoTest {
     void creacionComentarioServicesImpl() throws Exception {
         Reclamo nuevo2 = new Reclamo(222, 222, new Date(0, 0, 0), "sad", 222);
         reclamoRepositoryImpl.findAllReclamos();
+        reclamoServices.findAllComentarios();
+        reclamoServices.saveComentario(nuevo2);
         reclamoRepositoryImpl.saveReclamo(nuevo2);
     }
 
