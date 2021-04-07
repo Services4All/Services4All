@@ -1,4 +1,4 @@
-package edu.escuelaing.service4All.backend.security;
+package edu.escuelaing.service4all.backend.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -40,9 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .formLogin()
         .and()
-        .httpBasic();
-        /* .and()
-        .csrf().ignoringAntMatchers("/user/**"); */
+        .httpBasic()
+        .and()
+        .csrf().ignoringAntMatchers("/user/**"); 
 
     }
 

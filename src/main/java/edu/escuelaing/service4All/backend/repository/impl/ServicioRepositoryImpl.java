@@ -1,7 +1,7 @@
-package edu.escuelaing.service4All.backend.repository.impl;
+package edu.escuelaing.service4all.backend.repository.impl;
 
-import edu.escuelaing.service4All.backend.model.*;
-import edu.escuelaing.service4All.backend.repository.*;
+import edu.escuelaing.service4all.backend.model.*;
+import edu.escuelaing.service4all.backend.repository.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.Service;
 import java.util.List;

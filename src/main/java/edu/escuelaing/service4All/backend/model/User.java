@@ -1,4 +1,4 @@
-package edu.escuelaing.service4All.backend.model;
+package edu.escuelaing.service4all.backend.model;
 
 
 import javax.persistence.*;

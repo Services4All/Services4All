@@ -1,9 +1,9 @@
-package edu.escuelaing.service4All.backend.services.impl;
+package edu.escuelaing.service4all.backend.services.impl;
 
-import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
-import edu.escuelaing.service4All.backend.model.User;
-import edu.escuelaing.service4All.backend.repository.UserRepository;
-import edu.escuelaing.service4All.backend.services.UserService;
+import edu.escuelaing.service4all.backend.exceptions.Service4AllException;
+import edu.escuelaing.service4all.backend.model.User;
+import edu.escuelaing.service4all.backend.repository.UserRepository;
+import edu.escuelaing.service4all.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

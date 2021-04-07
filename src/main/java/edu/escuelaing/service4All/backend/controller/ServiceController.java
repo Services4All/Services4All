@@ -1,12 +1,10 @@
-package edu.escuelaing.service4All.backend.controller;
+package edu.escuelaing.service4all.backend.controller;
 
 import com.google.gson.Gson;
-import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
-import edu.escuelaing.service4All.backend.model.*;
+import edu.escuelaing.service4all.backend.model.*;
 import java.util.List;
 
 
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.escuelaing.service4All.backend.services.ServiciosServices;
+import edu.escuelaing.service4all.backend.services.ServiciosServices;
 
 @RestController
 public class ServiceController {

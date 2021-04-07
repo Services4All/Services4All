@@ -1,6 +1,6 @@
-package edu.escuelaing.service4All.backend.repository;
+package edu.escuelaing.service4all.backend.repository;
 
-import edu.escuelaing.service4All.backend.model.*;
+import edu.escuelaing.service4all.backend.model.*;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
