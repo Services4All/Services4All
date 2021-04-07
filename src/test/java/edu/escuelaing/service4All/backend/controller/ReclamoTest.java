@@ -31,11 +31,11 @@ public class ReclamoTest {
         Reclamo nuevo2 = new Reclamo(1, 1, new Date(0, 0, 0), "sad", 1);
         Reclamo nuevo = new Reclamo();
         nuevo.setReclamo("reclamo");
-        nuevo.setFecha(new Date(0, 0, 0));
+        nuevo.setCreationdate(new Date(0, 0, 0));
         nuevo.setId(1);
         nuevo.setIdservicio(1);
         nuevo.setIdusuario(1);
-        nuevo.getFecha();
+        nuevo.getCreatioDate();
         nuevo.getIdusuario();
 
         assertTrue(nuevo.getId() == 1 && nuevo.getIdservicio() == 1);
