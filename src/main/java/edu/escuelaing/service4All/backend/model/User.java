@@ -35,10 +35,10 @@ public class User {
     public User() {
     }
 
-    public User(int id, String firstname, String lastname, String email, String cedula, String tipo, String city, String password) {
+    public User(int id, String nombre, String apellido, String email, String cedula, String tipo, String city, String password) {
         this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.firstname = nombre;
+        this.lastname = apellido;
         this.email = email;
         this.cedula = cedula;
         this.tipo = tipo;
@@ -48,6 +48,9 @@ public class User {
 
     public int getId() {
         return id;
+    }
+    public void pruebaXD(){
+        this. setCedula("1354564");
     }
 
     public void setId(int id) {
