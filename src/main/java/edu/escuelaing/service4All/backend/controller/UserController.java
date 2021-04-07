@@ -44,7 +44,8 @@ public class UserController {
     @PostMapping(value = "/registrar")
     public ResponseEntity<?> saveUser(@RequestBody User user) {
         try {
-            userService.saveUser(user);
+            User nuevo= new User(user.getId(),user.getFirstname(),user.getLastname(), user.getEmail(),user.getCedula(), user.getTipo(),user.getCity(),user.getPassword());
+            userService.saveUser(nuevo);
             return new ResponseEntity<>( HttpStatus.OK);
         } catch (Exception e) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, e);
