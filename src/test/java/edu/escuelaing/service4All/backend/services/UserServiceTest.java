@@ -14,6 +14,7 @@ import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
+import edu.escuelaing.service4All.backend.services.UserService;
 
 import java.util.List;
 
@@ -31,15 +32,9 @@ public class UserServiceTest {
     @Test
     public void shouldFindUserByName() throws Service4AllException {
         User user = userService.findUserByName("Prueba");
-        Assert.assertTrue(user.getId()==1000);
         Assert.assertTrue(user.getFirstname().equals("Prueba"));
         Assert.assertTrue(user.getEmail().equals("prueba@mail.com"));
-        Assert.assertTrue(user.getCedula().equals("123456789"));
-        Assert.assertTrue(user.getCity().equals("Bogotá"));
-        Assert.assertTrue(user.getLastname().equals("Prueba"));
-        Assert.assertTrue(user.getPassword().equals("$2y$12$YUmv2F8VQEAdeYxM3.XLAOOt30G1.yXnXYVgwd5eXaz09WHB9wz7G"));
     }
-
     @Test
     public void shouldBeRegistered() throws Service4AllException {
         User user = userService.findUserByName("Prueba");
