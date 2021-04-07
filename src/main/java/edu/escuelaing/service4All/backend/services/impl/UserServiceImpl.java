@@ -17,24 +17,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-    List<User> userList = new ArrayList<User>();
-
-    //@PostConstruct
-    //public void populateUserList(){
-    //    User user = new User();
-    //    user.setId(1000);
-    //    user.setFirstname("Prueba");
-    //    user.setLastname("Prueba");
-    //    user.setEmail("prueba@mail.com");
-    //    user.setCedula("123456789");
-    //    user.setCategory("Medicina");
-    //    user.setCity("Bogotá");
-    //    /**
-    //     * La contraseña es 12345
-    //     */
-    //    user.setPassword("$2y$12$YUmv2F8VQEAdeYxM3.XLAOOt30G1.yXnXYVgwd5eXaz09WHB9wz7G");
-    //    userList.add(user);
-    //}
+    List<User> userList = new ArrayList<>();
 
 
     /**
@@ -63,7 +46,10 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void saveUser(User user) {
-       
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(4);
+        /*modificar el password para que sea seguro*/
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        userRepository.save(user);
     }
 
     /**
