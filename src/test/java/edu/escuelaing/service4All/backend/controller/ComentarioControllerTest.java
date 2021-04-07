@@ -28,16 +28,21 @@ public class ComentarioControllerTest {
     private MockMvc mvc;
 
     @Autowired
-	ReclamoController reclamoController;
+	ComentarioController comentarioController;
 
 
     @Test
     void getAllComentarios() throws Exception {
-        Reclamo comentario = new Reclamo(1, 1, new Date(0, 0, 0), "sad", 1);
-        reclamoController.findAllReclamos();
+        Comentario comentario = new Comentario(1, 1, new Date(0, 0, 0), "sad", 1);
+        comentarioController.findAllComentarios();
+        comentarioController.findAllComentariosById(111);
+        comentarioController.addComentario(comentario);
       
     }
-   
+    @Test
+    void getAllComentarioById() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/comentarios/111"));
+    }
 
 
 }
