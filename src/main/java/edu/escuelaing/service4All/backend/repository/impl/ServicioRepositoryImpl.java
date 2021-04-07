@@ -16,7 +16,7 @@ public class ServicioRepositoryImpl{
 	       return servicioRepository.findAll();
 	  }
 
-	  @Autowired
+	
 	  public void saveService(Servicio newServicio){
 		servicioRepository.save(newServicio);
 	  }

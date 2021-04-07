@@ -3,18 +3,15 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import java.util.Date;
+
 import edu.escuelaing.service4All.backend.model.Servicio;
 import edu.escuelaing.service4All.backend.repository.impl.ServicioRepositoryImpl;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
-import static org.hamcrest.Matchers.equalTo;
+
+import java.util.Date;
+
 import static org.junit.Assert.assertTrue;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import org.springframework.test.context.ActiveProfiles;
 
 
@@ -27,10 +24,12 @@ public class ServicioTest {
     private MockMvc mvc;
 
     @Autowired
-    ServiciosServices serviciosServices;
+    ServiciosServices ServiciosServices;
 
     @Autowired
     ServicioRepositoryImpl servicioRepositoryImpl;
+
+   
 
     @Test
     void creacionServicioSetYGet() throws Exception {
@@ -50,12 +49,11 @@ public class ServicioTest {
         nuevo.getIdusuario();
         assertTrue(nuevo.getCategoria().equals("categoria") && nuevo.getDescripcion().equals("descripcion"));
     }
-
     @Test
-    void testService() throws Exception{
+    void creacionServicio() throws Exception {
         Servicio nuevo2=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"asdas");
-        serviciosServices.saveService(nuevo2);
-        servicioRepositoryImpl.saveService(nuevo2);
+        ServiciosServices.saveService(nuevo2);
+        assertTrue(true);
     }
 
 }
