@@ -29,13 +29,13 @@ public class ServiciosServices {
 
 
     public Servicio findServiceById(int id) throws Service4AllException {
-        Servicio seervicio;
+        Servicio seervicio=null;
         for(Servicio service: findAllServices()){
             if(service.getId() == id){
                 seervicio = service;
             }
         }
-        if(seervicio == null) throw new Service4AllException(Service4AllException.SERVICIO_NO_EXISTE);
+        if(seervicio.equals(null) )throw new Service4AllException(Service4AllException.SERVICIO_NO_EXISTE);
         return seervicio;
     }
 
