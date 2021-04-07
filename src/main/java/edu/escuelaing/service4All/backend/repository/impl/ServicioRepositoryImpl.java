@@ -16,5 +16,10 @@ public class ServicioRepositoryImpl{
 	       return servicioRepository.findAll();
 	  }
 
+	
+	  public void saveService(Servicio newServicio){
+		servicioRepository.save(newServicio);
+	  }
+
    
 }
