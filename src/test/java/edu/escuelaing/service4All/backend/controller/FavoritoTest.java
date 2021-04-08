@@ -13,10 +13,21 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class FavoritoTest {
+class FavoritoTest {
 
     @Autowired
     FavoritoServices favoritoServices;
+
+    @Test
+    void creacionFavoritoSetYGet() throws Exception {
+        Favorito nuevo = new Favorito(222, 222);
+        Favorito nuevo2 = new Favorito();
+        nuevo.setIdservicio(222);
+        nuevo.setIdusuario(222);
+        nuevo.getIdusuario();
+        nuevo.getIdservicio();
+        assertTrue(nuevo.getIdservicio()==222);
+    }
 
     @Test
     void FavoritosServicesGet() throws Exception {

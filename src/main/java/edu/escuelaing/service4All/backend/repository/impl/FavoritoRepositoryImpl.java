@@ -17,7 +17,7 @@ public class FavoritoRepositoryImpl {
         return  favoritoRepository.findAll();
     }
 
-    public List<Favorito> FindByIdUsuario(int id) {
+    public List<Favorito> findbyidusuario(int id) {
         List<Favorito> result= new ArrayList<>();
         List<Favorito> favoritos = favoritoRepository.findAll();
         for (Favorito fav: favoritos) {
