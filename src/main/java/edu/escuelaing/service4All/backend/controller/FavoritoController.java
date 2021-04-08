@@ -14,16 +14,6 @@ public class FavoritoController {
     @Autowired
     FavoritoServices favoritosServices;
 
-    @PostMapping(value="/nuevoFavorito")
-    public ResponseEntity<String> addFavorito(@RequestBody Favorito fav){
-        try{
-            favoritosServices.addfavorito(fav);
-            return new ResponseEntity<>(HttpStatus.CREATED);
-        }catch(Exception ex){
-            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
-        }
-    }
-
     @GetMapping()
     public ResponseEntity<String> getAllFavoritos(){
         try{

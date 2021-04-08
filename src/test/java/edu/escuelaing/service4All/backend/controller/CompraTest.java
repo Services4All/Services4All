@@ -25,6 +25,7 @@ class CompraTest {
     void creacionCompraSetYGet() throws Exception {
         Compra nuevo = new Compra(222,222,100000,new Date(0,0,0));
         Compra nuevo2 = new Compra();
+        nuevo2.setId(3);
         nuevo.setIdservicio(222);
         nuevo.setIdusuario(222);
         nuevo.setCreationdate(new Date(0,0,0));
