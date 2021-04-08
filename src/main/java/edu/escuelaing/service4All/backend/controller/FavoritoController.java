@@ -20,7 +20,7 @@ public class FavoritoController {
             favoritosServices.addfavorito(fav);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }catch(Exception ex){
-
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
         }
     }
 
