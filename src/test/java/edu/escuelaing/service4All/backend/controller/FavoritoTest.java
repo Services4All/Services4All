@@ -10,6 +10,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @SpringBootTest
@@ -29,7 +30,7 @@ class FavoritoTest {
         int a = nuevo.getIdusuario();
         nuevo.getIdservicio();
         int b = 222;
-        assertTrue(a==b);
+        assertEquals(a,b);
     }
 
     @Test
@@ -39,20 +40,4 @@ class FavoritoTest {
         assertTrue(true);
     }
 
-    @Test
-    void FavoritosServicesGetId() throws Exception {
-        Favorito nuevo = new Favorito(222, 222);
-        List<Favorito> fav = favoritoServices.findFavoritosByIdUsuario(222);
-        if (fav==null){
-            assertTrue(true);
-        }
-    }
-    @Test
-    void FavoritosServicesGetId2() throws Exception {
-        Favorito nuevo = new Favorito(222, 222);
-        List<Favorito> fav = favoritoServices.findFavoritosByIdUsuario(222);
-        if (fav!=null){
-            assertTrue(true);
-        }
-    }
 }

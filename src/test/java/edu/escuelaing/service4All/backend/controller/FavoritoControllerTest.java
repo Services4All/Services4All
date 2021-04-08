@@ -27,13 +27,6 @@ class FavoritoControllerTest {
 
     @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
     @Test
-    void shouldGetAllServicesByCategoria() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/favoritos/222"));
-        assertTrue(true);
-    }
-
-    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
-    @Test
     void getAllFavoritos() throws Exception {
         mvc.perform(
                 get("/favoritos")

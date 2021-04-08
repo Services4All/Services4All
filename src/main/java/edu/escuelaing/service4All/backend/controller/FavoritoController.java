@@ -21,9 +21,5 @@ public class FavoritoController {
     public ResponseEntity<String> getAllFavoritos(){
         return new ResponseEntity<>(new Gson().toJson(favoritosServices.findAllFavoritos()), HttpStatus.OK);
     }
-
-    @GetMapping(path="/{id}")
-    public ResponseEntity<String> getServicesByCategory(@PathVariable int id){
-        return new ResponseEntity<>(new Gson().toJson(favoritosServices.findFavoritosByIdUsuario(id)), HttpStatus.OK);
-    }
+    
 }
