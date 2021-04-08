@@ -17,7 +17,7 @@ public class CalificacionController {
     CalificacionesServices calificacionesServices;
 
     @GetMapping
-    public ResponseEntity<?> getCalificaciones() {
+    public ResponseEntity<String> getCalificaciones() {
 
         return new ResponseEntity<>(new Gson().toJson(calificacionesServices.findAll()), HttpStatus.OK);
 
