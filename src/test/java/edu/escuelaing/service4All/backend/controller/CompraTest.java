@@ -16,13 +16,15 @@ import static org.junit.Assert.assertTrue;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class CompraTest {
+class CompraTest {
+
     @Autowired
     CompraServices compraServices;
 
     @Test
     void creacionCompraSetYGet() throws Exception {
         Compra nuevo = new Compra(222,222,100000,new Date(0,0,0));
+        Compra nuevo2 = new Compra();
         nuevo.setIdservicio(222);
         nuevo.setIdusuario(222);
         nuevo.setCreationdate(new Date(0,0,0));

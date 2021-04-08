@@ -26,6 +26,8 @@ public class Compra {
         this.creationdate = fecha;
     }
 
+    public Compra(){}
+
     public int getId() {
         return id;
     }

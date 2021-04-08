@@ -1,6 +1,8 @@
 package edu.escuelaing.service4All.backend.controller;
 
 import edu.escuelaing.service4All.backend.model.Compra;
+import edu.escuelaing.service4All.backend.services.CompraServices;
+import edu.escuelaing.service4All.backend.controller.CompraController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,9 +20,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class CompraControllerTest {
+class CompraControllerTest {
     @Autowired
     private MockMvc mvc;
+
+    @Autowired
+    CompraServices compraServices;
 
     @Autowired
     CompraController compraController;
