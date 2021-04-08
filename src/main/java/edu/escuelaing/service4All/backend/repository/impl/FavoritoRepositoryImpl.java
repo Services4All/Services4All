@@ -23,14 +23,13 @@ public class FavoritoRepositoryImpl {
     }
 
     public Optional<Favorito> findAllFavoritosById(int id) {
-        List<Favorito> res= new ArrayList<Favorito>();
+        List<Favorito> res= new ArrayList<>();
         for (Favorito c: favoritoRepository.findAll()) {
             if(c.getIdservicio()==id) {
                 res.add(c);
             }
         }
-        Optional<Favorito> re= res.stream().findAny();
-        return re;
+        return res.stream().findAny();
     }
 
 }

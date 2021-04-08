@@ -36,6 +36,7 @@ class FavoritoTest {
     @Test
     void FavoritosServicesImpl() throws Exception {
         Favorito nuevo = new Favorito(222, 222);
+        favoritoServices.addfavorito(nuevo);
         favoritoServices.findAllFavoritos();
         favoritoServices.findFavoritosByIdUsuario(222);
         assertTrue(true);
