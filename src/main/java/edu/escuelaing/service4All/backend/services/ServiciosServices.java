@@ -34,6 +34,17 @@ public class ServiciosServices {
         return serviceUtil;
     }
 
+    public List<Servicio> findAllServicesByCategory(String categoria) {
+        List<Servicio> Servicios = servicio.findAllServices();
+        List<Servicio> result = new ArrayList<>();
+        for (Servicio servicio:Servicios){
+            if(servicio.getCategoria().equals(categoria)){
+                result.add(servicio);
+            }
+        }
+        return result;
+    }
+
     public List<Servicio> findAllServicesIfContainAKeyValueInName(String value) throws Service4AllException {
         List<Servicio> servicios = new ArrayList<>();
         for(Servicio service: findAllServices()){
@@ -43,6 +54,18 @@ public class ServiciosServices {
         }
         if(servicios.isEmpty()) throw new Service4AllException(Service4AllException.SERVICIOS_NO_ASOCIADOS);
         return servicios;
+    }
+
+    public List<String> findAllCategories()throws Service4AllException{
+        List<String> categorias = new ArrayList<>();
+        List<Servicio> Servicios = servicio.findAllServices();
+        for (Servicio servicio:Servicios){
+            if(categorias.contains(servicio.getCategoria())){
+                continue;
+            }
+            else{categorias.add(servicio.getCategoria());}
+        }
+        return categorias;
     }
 
     public void saveService(Servicio newServicio){

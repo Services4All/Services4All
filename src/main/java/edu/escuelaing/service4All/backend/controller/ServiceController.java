@@ -31,7 +31,6 @@ public class ServiceController {
         return serviciosService.findAllServices();
     }
 
-
     @GetMapping("/service/{id}")
     public ResponseEntity<?> getServiceById(@PathVariable int id){
         try{
@@ -50,4 +49,21 @@ public class ServiceController {
         }
     }
 
+    @GetMapping("/services/categories/{categoria}")
+    public ResponseEntity<?> getServicesByCategory(@PathVariable String categoria){
+        try{
+            return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllServicesByCategory(categoria)), HttpStatus.OK);
+        }catch (Exception ex){
+            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/categories")
+    public ResponseEntity<?> getAllCategories(){
+        try{
+            return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllCategories()), HttpStatus.OK);
+        }catch (Exception ex){
+            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
+        }
+    }
 }

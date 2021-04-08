@@ -15,9 +15,9 @@ import edu.escuelaing.service4All.backend.services.ServiciosServices;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.springframework.test.context.ActiveProfiles;
+
+import static org.junit.Assert.*;
 
 
 @SpringBootTest(classes = Service4AllApplication.class)
@@ -87,6 +87,22 @@ class ServicioTest {
 
         //int b = ServiciosServices.findAllServicesIfContainAKeyValueInName("delete").size();
         assertEquals(aa-1,bb);
+    }
+
+    @Test
+    void GetServicioByCategoria() throws Exception {
+        Servicio nuevo=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"CategoriaNueva");
+        ServiciosServices.saveService(nuevo);
+        List<Servicio> Servicios = ServiciosServices.findAllServicesByCategory("CategoriaNueva");
+        assertTrue(Servicios.size()>=1);
+    }
+
+    @Test
+    void GetCategorias() throws Exception {
+        Servicio nuevo=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"CategoriaNueva");
+        ServiciosServices.saveService(nuevo);
+        List<String> Categorias = ServiciosServices.findAllCategories();
+        assertTrue(Categorias.contains("CategoriaNueva"));
     }
 
 }
