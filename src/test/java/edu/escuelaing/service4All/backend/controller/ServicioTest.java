@@ -6,12 +6,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 
 import edu.escuelaing.service4All.backend.Service4AllApplication;
+import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.Servicio;
 import edu.escuelaing.service4All.backend.repository.impl.ServicioRepositoryImpl;
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
 
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -69,6 +71,22 @@ class ServicioTest {
         String x = a.getDescripcion();
         String b = "Nueva";
         assertEquals(x,b);
+    }
+
+    @Test
+    void deleteServicio() throws Service4AllException  {
+        Servicio nuevo2=new Servicio(1,1,1,"delete2","delete2",new Date(0,0,0),"delete2");
+
+        ServiciosServices.saveService(nuevo2);
+        List<Servicio> a = ServiciosServices.findAllServices();
+        int aa = a.size();
+        
+        ServiciosServices.deleteServicio(a.get(aa-1).getId());
+        List<Servicio> b = ServiciosServices.findAllServices();
+        int bb = b.size();
+
+        //int b = ServiciosServices.findAllServicesIfContainAKeyValueInName("delete").size();
+        assertEquals(aa-1,bb);
     }
 
 }

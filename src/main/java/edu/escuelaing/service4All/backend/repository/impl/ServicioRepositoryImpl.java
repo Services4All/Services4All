@@ -21,5 +21,10 @@ public class ServicioRepositoryImpl{
 		servicioRepository.save(newServicio);
 	  }
 
+
+    public void delete(int id) {
+		servicioRepository.deleteById( id);
+    }
+
    
 }

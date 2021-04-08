@@ -56,6 +56,8 @@ public class ServiciosServices {
 		servicio.saveService(s);
     }
  
-	
+	public void deleteServicio(int id){
+    	servicio.delete(id);
+    }
 
 }
