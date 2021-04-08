@@ -27,7 +27,7 @@ public class ServiceController {
         return serviciosService.findAllServices();
     }
 
-<<<<<<< HEAD
+
     private String notfound="HTTP 404 Not Found";
 
     @GetMapping("/service/{id}")
