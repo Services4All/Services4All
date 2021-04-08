@@ -40,7 +40,6 @@ public class FavoritoController {
         }catch (Exception ex){
             return new ResponseEntity<>(ex.getMessage(),HttpStatus.NOT_FOUND);
         }
-
     }
 
 }
