@@ -24,6 +24,9 @@ public class FavoritoRepositoryImpl {
             if(fav.getIdusuario()==id) {
                 result.add(fav);
             }
+            else{
+                return null;
+            }
         }
         return  result;
     }

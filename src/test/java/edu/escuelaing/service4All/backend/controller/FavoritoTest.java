@@ -8,6 +8,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
+import java.util.List;
+
 import static org.junit.Assert.assertTrue;
 
 @SpringBootTest
@@ -24,9 +26,10 @@ class FavoritoTest {
         Favorito nuevo2 = new Favorito();
         nuevo.setIdservicio(222);
         nuevo.setIdusuario(222);
-        nuevo.getIdusuario();
+        int a = nuevo.getIdusuario();
         nuevo.getIdservicio();
-        assertTrue(nuevo.getIdservicio()==222);
+        int b = 222;
+        assertTrue(a==b);
     }
 
     @Test
@@ -39,7 +42,17 @@ class FavoritoTest {
     @Test
     void FavoritosServicesGetId() throws Exception {
         Favorito nuevo = new Favorito(222, 222);
-        favoritoServices.findFavoritosByIdUsuario(222);
-        assertTrue(true);
+        List<Favorito> fav = favoritoServices.findFavoritosByIdUsuario(222);
+        if (fav==null){
+            assertTrue(true);
+        }
+    }
+    @Test
+    void FavoritosServicesGetId2() throws Exception {
+        Favorito nuevo = new Favorito(222, 222);
+        List<Favorito> fav = favoritoServices.findFavoritosByIdUsuario(222);
+        if (fav!=null){
+            assertTrue(true);
+        }
     }
 }

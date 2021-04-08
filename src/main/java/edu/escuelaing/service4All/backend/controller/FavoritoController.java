@@ -19,19 +19,11 @@ public class FavoritoController {
 
     @GetMapping()
     public ResponseEntity<String> getAllFavoritos(){
-        try{
-            return new ResponseEntity<>(new Gson().toJson(favoritosServices.findAllFavoritos()), HttpStatus.OK);
-        }catch (Exception ex){
-            return new ResponseEntity<>("Error 404", HttpStatus.NOT_FOUND);
-        }
+        return new ResponseEntity<>(new Gson().toJson(favoritosServices.findAllFavoritos()), HttpStatus.OK);
     }
 
     @GetMapping(path="/{id}")
     public ResponseEntity<String> getServicesByCategory(@PathVariable int id){
-        try{
-            return new ResponseEntity<>(new Gson().toJson(favoritosServices.findFavoritosByIdUsuario(id)), HttpStatus.OK);
-        }catch (Exception ex){
-            return new ResponseEntity<>("Error Not Found 404", HttpStatus.NOT_FOUND);
-        }
+        return new ResponseEntity<>(new Gson().toJson(favoritosServices.findFavoritosByIdUsuario(id)), HttpStatus.OK);
     }
 }
