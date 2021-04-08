@@ -36,8 +36,8 @@ class FavoritoTest {
     @Test
     void FavoritosServicesImpl() throws Exception {
         Favorito nuevo = new Favorito(222, 222);
-        favoritoServices.AddFavorito(nuevo);
         favoritoServices.findAllFavoritos();
+        favoritoServices.findFavoritosByIdUsuario(222);
         assertTrue(true);
     }
 
