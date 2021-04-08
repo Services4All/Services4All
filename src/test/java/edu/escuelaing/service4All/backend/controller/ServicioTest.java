@@ -21,7 +21,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest(classes = Service4AllApplication.class)
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class ServicioTest {
+class ServicioTest {
 
     @Autowired
     private MockMvc mvc;
@@ -56,6 +56,9 @@ public class ServicioTest {
     void creacionServicio() throws Exception {
         Servicio nuevo2=new Servicio(1,1,1,"asd","asda",new Date(0,0,0),"asdas");
         ServiciosServices.saveService(nuevo2);
+        String x = nuevo2.getDescripcion();
+        String b = "asda";
+        assertEquals(x,b);
     }
 
     @Test
