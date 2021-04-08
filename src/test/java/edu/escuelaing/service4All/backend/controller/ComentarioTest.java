@@ -56,6 +56,7 @@ public class ComentarioTest {
         Comentario nuevo2 = new Comentario(222, 222, new Date(0, 0, 0), "sad", 222);
         comentarioServicesImpl.findAllComentarios();
         comentarioServicesImpl.saveComentario(nuevo2);
+        comentarioServicesImpl.findAllComentariosById(222);
         assertTrue(true);
     }
 
