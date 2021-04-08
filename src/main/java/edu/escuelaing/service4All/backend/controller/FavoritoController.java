@@ -1,6 +1,7 @@
 package edu.escuelaing.service4All.backend.controller;
 
 import com.google.gson.Gson;
+import edu.escuelaing.service4All.backend.model.Favorito;
 import edu.escuelaing.service4All.backend.services.FavoritoServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,16 @@ public class FavoritoController {
 
     @Autowired
     FavoritoServices favoritosServices;
+
+    @PostMapping(value="/nuevoFavorito")
+    public ResponseEntity<String> addFavorito(@RequestBody Favorito fav){
+        try{
+            favoritosServices.addfavorito(fav);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }catch(Exception ex){
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+        }
+    }
 
     @GetMapping()
     public ResponseEntity<String> getAllFavoritos(){
