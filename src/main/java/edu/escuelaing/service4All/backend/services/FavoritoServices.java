@@ -12,9 +12,15 @@ public class FavoritoServices {
     @Autowired
     private FavoritoRepositoryImpl favorito;
 
+    public void AddFavorito(Favorito fav) {
+        favorito.AddFavorito(fav);
+    }
+
     public List<Favorito> findAllFavoritos(){
         return favorito.findAllFavoritos();
     }
 
-
+    public List<Favorito> findFavoritosByIdUsuario(int id) {
+        return favorito.FindByIdUsuario(id);
+    }
 }

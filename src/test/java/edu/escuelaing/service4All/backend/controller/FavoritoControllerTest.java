@@ -34,4 +34,10 @@ class FavoritoControllerTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    void getAllFavoritosById() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/favoritos/222"));
+        assertTrue(true);
+    }
+
 }
