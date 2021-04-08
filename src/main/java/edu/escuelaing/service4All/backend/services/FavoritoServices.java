@@ -17,6 +17,6 @@ public class FavoritoServices {
     }
 
     public List<Favorito> findFavoritosByIdUsuario(int id) {
-        return favorito.FindByIdUsuario(id);
+        return favorito.findbyidusuario(id);
     }
 }
