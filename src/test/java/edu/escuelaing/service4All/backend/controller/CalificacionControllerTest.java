@@ -24,7 +24,7 @@ import edu.escuelaing.service4All.backend.Service4AllApplication;
 @SpringBootTest(classes = Service4AllApplication.class)
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class CalificacionControllerTest {
+class CalificacionControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -39,7 +39,7 @@ public class CalificacionControllerTest {
 
     @WithMockUser(value = "login", password = "login", roles = "ADMIN")
     @Test
-    public void shouldGetCalificaciones() throws Exception {
+    void shouldGetCalificaciones() throws Exception {
         mockMvc.perform(
                 get("/calificaciones")
                         .contentType(MediaType.APPLICATION_JSON))

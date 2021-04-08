@@ -21,14 +21,14 @@ public class Calificacion {
     private int idservicio;
 	
 	@Column(name = "calificacion")
-    private int calificacion;
+    private int calif;
 
 
     public Calificacion(int id, int idservicio, int idusuario, int calificacion) {
         this.id = id;
         this.idservicio = idservicio;
         this.idusuario = idusuario;
-        this.calificacion = calificacion;
+        this.calif = calificacion;
     }
     public Calificacion() {
     	
@@ -46,10 +46,10 @@ public class Calificacion {
         this.idusuario = idusuario;
     }
     public int getCalificacion() {
-        return calificacion;
+        return calif;
     }
     public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
+        this.calif = calificacion;
     }
     public int getIdservicio() {
         return idservicio;

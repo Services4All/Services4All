@@ -1,6 +1,5 @@
 package edu.escuelaing.service4All.backend.controller;
 
-
 import com.google.gson.Gson;
 
 import edu.escuelaing.service4All.backend.services.CalificacionesServices;
@@ -19,13 +18,9 @@ public class CalificacionController {
 
     @GetMapping
     public ResponseEntity<?> getCalificaciones() {
-        try {
-            return new ResponseEntity<>(new Gson().toJson(calificacionesServices.findAll()), HttpStatus.OK);
-        } catch (Exception ex) {
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
-    }
-  
 
+        return new ResponseEntity<>(new Gson().toJson(calificacionesServices.findAll()), HttpStatus.OK);
+
+    }
 
 }

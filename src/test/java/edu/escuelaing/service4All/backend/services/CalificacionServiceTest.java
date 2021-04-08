@@ -20,7 +20,7 @@ import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
 @SpringBootTest(classes = Service4AllApplication.class)
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class CalificacionServiceTest {
+class CalificacionServiceTest {
     @Autowired
     CalificacionesServices calificacionesServices;
 
@@ -28,7 +28,7 @@ public class CalificacionServiceTest {
     UserDetailsServiceImpl userDetailsService;
 
     @Test
-    public void shouldFindAll() throws Service4AllException {
+    void shouldFindAll() throws Service4AllException {
         int a = calificacionesServices.findAll().size();
         Assert.assertTrue(a > 0);
     }
