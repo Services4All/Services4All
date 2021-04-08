@@ -4,9 +4,6 @@ import com.google.gson.Gson;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.*;
 import java.util.List;
-
-
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,23 +28,25 @@ public class ServiceController {
         return serviciosService.findAllServices();
     }
 
-
     @GetMapping("/service/{id}")
-    public ResponseEntity<?> getServiceById(@PathVariable int id){
-        try{
-            return new ResponseEntity<>(new Gson().toJson(serviciosService.findServiceById(id)), HttpStatus.OK);
-        }catch (Exception ex){
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<String> getServiceById(@PathVariable int id) throws Service4AllException {
+        return new ResponseEntity<>(new Gson().toJson(serviciosService.findServiceById(id)), HttpStatus.OK);
     }
 
     @GetMapping("/services/{value}")
-    public ResponseEntity<?> getAllServicesIfContainAKeyValueInName(@PathVariable String value){
-        try{
-            return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllServicesIfContainAKeyValueInName(value)), HttpStatus.OK);
-        }catch (Exception ex){
-            return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<String> getAllServicesIfContainAKeyValueInName(@PathVariable String value) throws Service4AllException {
+        return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllServicesIfContainAKeyValueInName(value)), HttpStatus.OK);
     }
 
+    @GetMapping("/services/categories/{categoria}")
+    public ResponseEntity<String> getServicesByCategory(@PathVariable String categoria){
+
+        return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllServicesByCategory(categoria)), HttpStatus.OK);
+
+    }
+
+    @GetMapping("/categories")
+    public ResponseEntity<String> getAllCategories(){
+        return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllCategories()), HttpStatus.OK);
+    }
 }

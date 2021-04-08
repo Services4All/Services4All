@@ -21,7 +21,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class ServiceControllerTest {
+class ServiceControllerTest {
 
     @Autowired
     private MockMvc mvc;
@@ -64,6 +64,24 @@ public class ServiceControllerTest {
     void shouldGetAllServicesIfContainAKeyValueInName() throws Exception {
         mvc.perform(
                 get("/services/a")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+    @Test
+    void shouldGetAllServicesByCategoria() throws Exception {
+        mvc.perform(
+                get("/services/categories/plomeria")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
+    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+    @Test
+    void shouldGetAllCategorias() throws Exception {
+        mvc.perform(
+                get("/categories")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
