@@ -36,6 +36,10 @@ public class CalificacionServiceTest {
     @Test
     void shouldSave() throws Service4AllException {
         Calificacion c = new Calificacion(1,1,1,20);
+        c.setCalificacion(c.getCalificacion());
+        c.setId(c.getId());
+        c.setIdservicio(c.getIdservicio());
+        c.setIdusuario(c.getIdusuario());
         int a = calificacionesServices.findAll().size();
         calificacionesServices.saveCalificacion(c);
         int b = calificacionesServices.findAll().size();
