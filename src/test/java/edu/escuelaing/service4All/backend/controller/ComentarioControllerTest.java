@@ -18,7 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class ComentarioControllerTest {
+class ComentarioControllerTest {
 
     @Autowired
     private MockMvc mvc;
@@ -31,7 +31,7 @@ public class ComentarioControllerTest {
     void getAllComentarios() throws Exception {
         Comentario comentario = new Comentario(1, 1, new Date(0, 0, 0), "sad", 1);
         comentarioController.findAllComentarios();
-        
+
         assertTrue(true);
       
     }

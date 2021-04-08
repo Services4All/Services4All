@@ -17,7 +17,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class ComentarioTest {
+class ComentarioTest {
 
     @Autowired
     private MockMvc mvc;
@@ -56,6 +56,7 @@ public class ComentarioTest {
         Comentario nuevo2 = new Comentario(222, 222, new Date(0, 0, 0), "sad", 222);
         comentarioServicesImpl.findAllComentarios();
         comentarioServicesImpl.saveComentario(nuevo2);
+        comentarioServicesImpl.findAllComentariosById(222);
         assertTrue(true);
     }
 

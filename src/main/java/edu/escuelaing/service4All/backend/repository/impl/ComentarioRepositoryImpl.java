@@ -29,18 +29,12 @@ public class ComentarioRepositoryImpl{
         comentarioRepository.save(comentario);
     }
 	public Optional<Comentario>  findAllComentariosById(int id) {
-		List<Comentario> res= new ArrayList<Comentario>();
+		List<Comentario> res= new ArrayList<>();
 		for (Comentario c: comentarioRepository.findAll()) {
 			if(c.getIdservicio()==id) {
 				res.add(c);
-				
 			}
 		}
-		
-		Optional<Comentario> re= res.stream().findAny();
-		
-		return  re;
-		
-		
+		return res.stream().findAny();
 	}
 }

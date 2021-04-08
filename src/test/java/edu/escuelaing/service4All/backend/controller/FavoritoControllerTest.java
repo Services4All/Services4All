@@ -1,5 +1,6 @@
 package edu.escuelaing.service4All.backend.controller;
 
+import edu.escuelaing.service4All.backend.model.Favorito;
 import edu.escuelaing.service4All.backend.services.FavoritoServices;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +24,17 @@ class FavoritoControllerTest {
     private MockMvc mvc;
 
     @Autowired
+    FavoritoController favoritoController;
+
+    @Autowired
     FavoritoServices favoritoServices;
 
     @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
     @Test
     void getAllFavoritos() throws Exception {
+        Favorito fav = new Favorito(222,222);
+        favoritoController.getAllFavoritos();
+        favoritoController.findServiciosByIdUsuario(222);
         mvc.perform(
                 get("/favoritos")
                         .contentType(MediaType.APPLICATION_JSON))
