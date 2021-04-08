@@ -35,11 +35,11 @@ public class ServiciosServices {
     }
 
     public List<Servicio> findAllServicesByCategory(String categoria) {
-        List<Servicio> Servicios = servicio.findAllServices();
+        List<Servicio> servicios = servicio.findAllServices();
         List<Servicio> result = new ArrayList<>();
-        for (Servicio servicio:Servicios){
-            if(servicio.getCategoria().equals(categoria)){
-                result.add(servicio);
+        for (Servicio x:servicios){
+            if(x.getCategoria().equals(categoria)){
+                result.add(x);
             }
         }
         return result;
@@ -56,14 +56,13 @@ public class ServiciosServices {
         return servicios;
     }
 
-    public List<String> findAllCategories()throws Service4AllException{
+    public List<String> findAllCategories(){
         List<String> categorias = new ArrayList<>();
-        List<Servicio> Servicios = servicio.findAllServices();
-        for (Servicio servicio:Servicios){
-            if(categorias.contains(servicio.getCategoria())){
-                continue;
+        List<Servicio> servicios = servicio.findAllServices();
+        for (Servicio x:servicios){
+            if(!categorias.contains(x.getCategoria())){
+                categorias.add(x.getCategoria());
             }
-            else{categorias.add(servicio.getCategoria());}
         }
         return categorias;
     }
