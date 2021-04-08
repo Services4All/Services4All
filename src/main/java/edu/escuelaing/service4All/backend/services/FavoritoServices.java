@@ -5,6 +5,7 @@ import edu.escuelaing.service4All.backend.repository.impl.FavoritoRepositoryImpl
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FavoritoServices {
@@ -12,15 +13,15 @@ public class FavoritoServices {
     @Autowired
     private FavoritoRepositoryImpl favorito;
 
-    public void AddFavorito(Favorito fav) {
-        favorito.AddFavorito(fav);
+    public void addfavorito(Favorito fav) {
+        favorito.addfavorito(fav);
     }
 
     public List<Favorito> findAllFavoritos(){
         return favorito.findAllFavoritos();
     }
 
-    public List<Favorito> findFavoritosByIdUsuario(int id) {
-        return favorito.FindByIdUsuario(id);
+    public Optional<Favorito> findFavoritosByIdUsuario(int id) {
+        return favorito.findAllFavoritosById(id);
     }
 }

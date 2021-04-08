@@ -4,9 +4,9 @@ import edu.escuelaing.service4All.backend.model.Favorito;
 import edu.escuelaing.service4All.backend.repository.FavoritoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FavoritoRepositoryImpl {
@@ -14,7 +14,7 @@ public class FavoritoRepositoryImpl {
     @Autowired
     FavoritoRepository favoritoRepository;
 
-    public void AddFavorito(Favorito fav) {
+    public void addfavorito(Favorito fav) {
         favoritoRepository.save(fav);
     }
 
@@ -22,14 +22,15 @@ public class FavoritoRepositoryImpl {
         return  favoritoRepository.findAll();
     }
 
-    public List<Favorito> FindByIdUsuario(int id) {
-        List<Favorito> result= new ArrayList<>();
-        for (Favorito fav: favoritoRepository.findAll()) {
-            if(fav.getIdusuario()==id) {
-                result.add(fav);
+    public Optional<Favorito> findAllFavoritosById(int id) {
+        List<Favorito> res= new ArrayList<Favorito>();
+        for (Favorito c: favoritoRepository.findAll()) {
+            if(c.getIdservicio()==id) {
+                res.add(c);
             }
         }
-        return  result;
+        Optional<Favorito> re= res.stream().findAny();
+        return re;
     }
 
 }

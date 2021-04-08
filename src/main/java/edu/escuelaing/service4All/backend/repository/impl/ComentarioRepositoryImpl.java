@@ -33,14 +33,9 @@ public class ComentarioRepositoryImpl{
 		for (Comentario c: comentarioRepository.findAll()) {
 			if(c.getIdservicio()==id) {
 				res.add(c);
-				
 			}
 		}
-		
 		Optional<Comentario> re= res.stream().findAny();
-		
 		return  re;
-		
-		
 	}
 }

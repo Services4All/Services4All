@@ -18,7 +18,7 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-public class ComentarioControllerTest {
+class ComentarioControllerTest {
 
     @Autowired
     private MockMvc mvc;
