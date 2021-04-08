@@ -9,22 +9,18 @@ import java.util.List;
 @Service 
 public class ServicioRepositoryImpl{
 
-	 @Autowired
-	 ServicioRepository servicioRepository;
+	@Autowired
+	ServicioRepository servicioRepository;
 	 
-	 public List<Servicio> findAllServices() {
-	       return servicioRepository.findAll();
-	  }
-
-	
-	  public void saveService(Servicio newServicio){
+	public List<Servicio> findAllServices() {
+		return servicioRepository.findAll();
+	}
+	public void saveService(Servicio newServicio){
 		servicioRepository.save(newServicio);
 	  }
-
 
     public void delete(int id) {
 		servicioRepository.deleteById( id);
     }
-
    
 }
