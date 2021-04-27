@@ -1,5 +1,8 @@
 package edu.escuelaing.service4All.backend.controller;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.google.gson.Gson;
 
 import com.google.gson.JsonElement;
@@ -38,4 +41,14 @@ public class UserController {
         }
     }
 
+    @PostMapping(value = "/registrar")
+    public ResponseEntity<User> reservar(@RequestBody User user) {
+        try {
+            userService.saveUser(user);
+            return new ResponseEntity(user,HttpStatus.CREATED);
+        } catch (Exception e) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

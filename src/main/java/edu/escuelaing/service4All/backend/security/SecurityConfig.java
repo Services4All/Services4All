@@ -40,7 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .formLogin()
         .and()
-        .httpBasic();
+        .httpBasic()
+        .and()
+        .csrf().ignoringAntMatchers("/**");
 
     }
 

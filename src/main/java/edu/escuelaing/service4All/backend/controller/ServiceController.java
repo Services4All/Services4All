@@ -6,8 +6,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.escuelaing.service4All.backend.services.ServiciosServices;
@@ -56,12 +59,35 @@ public class ServiceController {
         }
     }
 
-    @GetMapping("/categories")
+    @GetMapping("/services/categories")
     public ResponseEntity<String> getAllCategories(){
         try{
             return new ResponseEntity<>(new Gson().toJson(serviciosService.findAllCategories()), HttpStatus.OK);
         }catch (Exception ex){
             return new ResponseEntity<>(notfound, HttpStatus.NOT_FOUND);
+        }
+    }
+    //para usar el put en el request mandar solo id y descripcion nueva en JSON
+    @PutMapping(value = "/services/putservice")
+    public ResponseEntity<?> putService(@RequestBody Servicio servi) {
+        try {
+            serviciosService.update(servi);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception ex) {
+           // Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    //para usar delete pasar solo el id en JSON
+    @DeleteMapping(value = "/delete")
+    public ResponseEntity<?> deleteService(@RequestBody Servicio servi) {
+        try {
+            serviciosService.deleteServicio(servi.getId());
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception ex) {
+           // Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 }
