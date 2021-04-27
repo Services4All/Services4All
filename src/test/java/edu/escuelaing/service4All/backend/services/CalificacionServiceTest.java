@@ -27,24 +27,24 @@ class CalificacionServiceTest {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 
-    @Test
-    void shouldFindAll() throws Service4AllException {
-        int a = calificacionesServices.findAll().size();
-        Assert.assertTrue(a > 0);
-    }
+    // @Test
+    // void shouldFindAll() throws Service4AllException {
+    //     int a = calificacionesServices.findAll().size();
+    //     Assert.assertTrue(a > 0);
+    // }
 
-    @Test
-    void shouldSave() throws Service4AllException {
-        Calificacion c = new Calificacion(1,1,1,20);
-        c.setCalificacion(c.getCalificacion());
-        c.setId(c.getId());
-        c.setIdservicio(c.getIdservicio());
-        c.setIdusuario(c.getIdusuario());
-        int a = calificacionesServices.findAll().size();
-        calificacionesServices.saveCalificacion(c);
-        int b = calificacionesServices.findAll().size();
-        Assert.assertEquals(a+1,b);
-    }
+    // @Test
+    // void shouldSave() throws Service4AllException {
+    //     Calificacion c = new Calificacion(1,1,1,20);
+    //     c.setCalificacion(c.getCalificacion());
+    //     c.setId(c.getId());
+    //     c.setIdservicio(c.getIdservicio());
+    //     c.setIdusuario(c.getIdusuario());
+    //     int a = calificacionesServices.findAll().size();
+    //     calificacionesServices.saveCalificacion(c);
+    //     int b = calificacionesServices.findAll().size();
+    //     Assert.assertEquals(a+1,b);
+    // }
 
     
 

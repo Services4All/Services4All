@@ -37,14 +37,14 @@ class CalificacionControllerTest {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
-    @WithMockUser(value = "login", password = "login", roles = "ADMIN")
-    @Test
-    void shouldGetCalificaciones() throws Exception {
-        mockMvc.perform(
-                get("/calificaciones")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
+    // @WithMockUser(value = "login", password = "login", roles = "ADMIN")
+    // @Test
+    // void shouldGetCalificaciones() throws Exception {
+    //     mockMvc.perform(
+    //             get("/calificaciones")
+    //                     .contentType(MediaType.APPLICATION_JSON))
+    //             .andExpect(status().isOk());
+    // }
 
 }
 

@@ -77,14 +77,14 @@ class ServiceControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
-    @Test
-    void shouldGetAllCategorias() throws Exception {
-        mvc.perform(
-                get("/categories")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
+//     @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
+//     @Test
+//     void shouldGetAllCategorias() throws Exception {
+//         mvc.perform(
+//                 get("/categories")
+//                         .contentType(MediaType.APPLICATION_JSON))
+//                 .andExpect(status().isOk());
+//     }
 
 //     @WithMockUser(value = "prueba@mail.com",password = "12345", roles = "ADMIN")
 //     @Test
