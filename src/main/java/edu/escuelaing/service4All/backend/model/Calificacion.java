@@ -14,21 +14,21 @@ public class Calificacion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+	@Column(name = "idusuario")
+    private int idusuario;
+
     @Column(name = "idservicio")
     private int idservicio;
-
-    @Column(name = "idusuario")
-    private int idusuario;
 	
 	@Column(name = "calificacion")
-    private int calificacion;
+    private int calif;
 
 
     public Calificacion(int id, int idservicio, int idusuario, int calificacion) {
         this.id = id;
         this.idservicio = idservicio;
         this.idusuario = idusuario;
-        this.calificacion = calificacion;
+        this.calif = calificacion;
     }
     public Calificacion() {
     	
@@ -45,19 +45,18 @@ public class Calificacion {
     public void setIdusuario(int idusuario) {
         this.idusuario = idusuario;
     }
+    public int getCalificacion() {
+        return calif;
+    }
+    public void setCalificacion(int calificacion) {
+        this.calif = calificacion;
+    }
     public int getIdservicio() {
         return idservicio;
     }
     public void setIdservicio(int idservicio) {
         this.idservicio = idservicio;
     }
-    public int getCalificacion() {
-        return calificacion;
-    }
-    public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
-    }
-   
 
 }
 
