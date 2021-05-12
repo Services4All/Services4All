@@ -21,6 +21,7 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    
 
     @RequestMapping(value = "/{correo}", method = RequestMethod.GET)
     public ResponseEntity<?> getUser(@PathVariable String correo) {

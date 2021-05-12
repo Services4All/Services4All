@@ -7,14 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
+import edu.escuelaing.service4All.backend.services.impl.*;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
-import edu.escuelaing.service4All.backend.services.UserService;
 
 import java.util.List;
 
@@ -27,10 +26,14 @@ public class UserServiceTest {
     UserService userService;
 
     @Autowired
+    UserServiceImpl userRepository;
+
+    @Autowired
     UserDetailsServiceImpl userDetailsService;
 
     @Test
     public void shouldFindUserByName() throws Service4AllException {
+        userRepository.getUserForType("comprador");
         User user = userService.findUserByName("Prueba");
         Assert.assertTrue(user.getFirstname().equals("Prueba"));
         Assert.assertTrue(user.getEmail().equals("prueba@mail.com"));
@@ -47,6 +50,7 @@ public class UserServiceTest {
     @Test
     void shouldFindUserByCorreo() throws Service4AllException {
         User user = userService.getUserByCorreo("prueba@mail.com");
+        userRepository.getUserForType("v");
         String a = user.getFirstname();
         String b = "Prueba";
         Assert.assertEquals(a,b);
@@ -55,6 +59,7 @@ public class UserServiceTest {
     @Test
     void shouldFindAllUsers() throws Service4AllException {
         List<User> users = userService.findAll();
+        userService.getUserForType("comprador");
         Assert.assertTrue(users.size()>=0);
     }
 

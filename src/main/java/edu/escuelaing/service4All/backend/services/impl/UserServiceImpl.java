@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -84,6 +85,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findAll() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public List<User> getUserForType(String tipousuario) {
+        List<User> listaUsersForType =new ArrayList<>();
+
+        for(User user : userRepository.findAll()){
+            if(user.getTipo().equals(tipousuario)){
+                listaUsersForType.add(user);
+            }
+        }
         return userRepository.findAll();
     }
 

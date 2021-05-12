@@ -5,6 +5,7 @@ import edu.escuelaing.service4All.backend.model.User;
 
 import java.util.List;
 
+
 public interface UserService {
     /**
      * Register a new user
@@ -21,5 +22,9 @@ public interface UserService {
     public User findUserByName(String name) throws Service4AllException;
 
     public List<User> findAll();
+
+    public List<User> getUserForType(String tipousuario);
+
+    
 
 }
