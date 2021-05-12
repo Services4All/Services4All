@@ -31,12 +31,23 @@ class CalificacionControllerTest {
 
     @Autowired
     private WebApplicationContext webApplicationContext;
+    @Autowired
+    CalificacionController calificacionController;
+
 
     @BeforeEach
     public void setup() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
+    
+    @Test
+    void getAllComentarios() throws Exception {
+
+        calificacionController.getCalificaciones();
+
+      
+    }
     // @WithMockUser(value = "login", password = "login", roles = "ADMIN")
     // @Test
     // void shouldGetCalificaciones() throws Exception {

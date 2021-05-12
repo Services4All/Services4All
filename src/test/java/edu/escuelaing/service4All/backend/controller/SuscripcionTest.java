@@ -32,6 +32,8 @@ class SuscripcionTest {
         nuevo2.setFechainicio(new Date(0,0,0));
         int a = nuevo.getIdvendedor();
         int b = 3;
+        nuevo.getFechainicio();
+        nuevo.getMesesvigente();
         suscripcionServices.findAllSuscripciones();
         assertEquals(a,b);
     }

@@ -21,11 +21,13 @@ public class SuscripcionControllerTest {
     @Autowired
     SuscripcionController suscripcionController;
 
+   
 
     @Test
     void getAllComentarios() throws Exception {
 
         suscripcionController.findAllSuscripcion();
+
       
     }
    
