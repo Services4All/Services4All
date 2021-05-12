@@ -20,7 +20,7 @@ public class CalificacionController {
     @GetMapping
     public ResponseEntity<String> getCalificaciones() {
 
-        return new ResponseEntity<>(new Gson().toJson(calificacionesServices.findAll()), HttpStatus.OK);
+        return new ResponseEntity<>(new Gson().toJson(calificacionesServices.findAllCalificaciones()), HttpStatus.OK);
 
     }
     @PostMapping(value = "/nuevaCalificacion")
