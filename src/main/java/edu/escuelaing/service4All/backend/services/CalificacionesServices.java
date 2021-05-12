@@ -16,7 +16,7 @@ public class CalificacionesServices {
 	@Autowired
 	CalificacionRepository calificacionRepository;
 	
-	public List<Calificacion> findAll(){
+	public List<Calificacion> findAllCalificaciones(){
         return calificacionRepository.findAll();
     }
 	public void saveCalificacion(Calificacion c){
