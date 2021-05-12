@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
+import edu.escuelaing.service4All.backend.services.impl.*;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import edu.escuelaing.service4All.backend.services.impl.*;
 import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
@@ -50,6 +50,7 @@ public class UserServiceTest {
     @Test
     void shouldFindUserByCorreo() throws Service4AllException {
         User user = userService.getUserByCorreo("prueba@mail.com");
+        userRepository.getUserForType("v");
         String a = user.getFirstname();
         String b = "Prueba";
         Assert.assertEquals(a,b);
