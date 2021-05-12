@@ -41,6 +41,14 @@ public class UserController {
             return new ResponseEntity<>("HTTP 404 Not Found", HttpStatus.NOT_FOUND);
         }
     }
+    @RequestMapping(value = "/{tipousuario}", method = RequestMethod.GET)
+    public ResponseEntity<?> getUserForType(@PathVariable String tipousuario) {
+        try {
+            return new ResponseEntity<>(new Gson().toJson(userService.getUserForType(tipousuario)), HttpStatus.OK);
+        } catch (Exception ex) {
+            return new ResponseEntity<>("HTTP 404 Not Found User for type", HttpStatus.NOT_FOUND);
+        }
+    }
 
     @PostMapping(value = "/registrar")
     public ResponseEntity<User> reservar(@RequestBody User user) {
