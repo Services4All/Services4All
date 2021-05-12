@@ -9,12 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
+import edu.escuelaing.service4All.backend.services.impl.*;
 import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.exceptions.Service4AllException;
 import edu.escuelaing.service4All.backend.model.User;
 import edu.escuelaing.service4All.backend.security.UserDetailsServiceImpl;
-import edu.escuelaing.service4All.backend.services.UserService;
 
 import java.util.List;
 
@@ -27,10 +26,14 @@ public class UserServiceTest {
     UserService userService;
 
     @Autowired
+    UserServiceImpl userRepository;
+
+    @Autowired
     UserDetailsServiceImpl userDetailsService;
 
     @Test
     public void shouldFindUserByName() throws Service4AllException {
+        userRepository.getUserForType("comprador");
         User user = userService.findUserByName("Prueba");
         Assert.assertTrue(user.getFirstname().equals("Prueba"));
         Assert.assertTrue(user.getEmail().equals("prueba@mail.com"));
@@ -55,6 +58,7 @@ public class UserServiceTest {
     @Test
     void shouldFindAllUsers() throws Service4AllException {
         List<User> users = userService.findAll();
+        userService.getUserForType("comprador");
         Assert.assertTrue(users.size()>=0);
     }
 

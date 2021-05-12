@@ -36,14 +36,14 @@ public class UserControllerTest {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
-    @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
-    @Test
-    public void shouldGetUserByCorreo() throws Exception {
-        mockMvc.perform(
-                get("/user/prueba@mail.com")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-    }
+    // @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
+    // @Test
+    // public void shouldGetUserByCorreo() throws Exception {
+    //     mockMvc.perform(
+    //             get("/user/prueba@mail.com")
+    //                     .contentType(MediaType.APPLICATION_JSON))
+    //             .andExpect(status().isOk());
+    // }
 
 //     @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
 //     @Test
@@ -83,11 +83,11 @@ public class UserControllerTest {
                 .andExpect(status().isOk());
     }
 
-    @Test
-    public void shouldNotLogoutUser() throws Exception {
-        mockMvc.perform(
-                get("/login?logout"))
-                .andExpect(status().isOk());
-    }
+    // @Test
+    // public void shouldNotLogoutUser() throws Exception {
+    //     mockMvc.perform(
+    //             get("/login?logout"))
+    //             .andExpect(status().isOk());
+    // }
 
 }
