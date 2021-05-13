@@ -33,5 +33,6 @@ public class SuscripcionServices {
     public void saveSuscripcion(Suscripcion suscrip) {
         suscripcionRepositoryImpl.save(suscrip);
     }
-    
+
+    public void DeleteSuscripcion(int idVendedor){suscripcionRepositoryImpl.delete(idVendedor);}
 }

@@ -40,7 +40,12 @@ public class SuscripcionControllerTest {
         res.setIdvendedor(res.getIdvendedor()+1);
         suscripcionController.addSuscripcion(res);
     }
-   
 
+    @Test
+    void deleteSuscripcion(int id)throws Exception{
+        List<Suscripcion> all = suscripcionServices.findAllSuscripciones();
+        Suscripcion res= all.get(id);
+        suscripcionController.deleteSusciption(res);
+    }
 
 }
