@@ -37,6 +37,20 @@ class SuscripcionTest {
         //comentario
     //}
 
+    @Test
+    void deleteSuscription(){
+        Suscripcion nuevo = new Suscripcion(1,1,new Date());
+        suscripcionRepositoryImpl.save(nuevo);
+        suscripcionRepositoryImpl.delete(nuevo.getIdvendedor());
+    }
+
+    @Test
+    void deleteSuscription2(){
+        Suscripcion nuevo = new Suscripcion(1,1,new Date());
+        suscripcionRepository.saveSuscripcion(nuevo);
+        suscripcionRepository.DeleteSuscripcion(1);
+    }
+
     
 
 }

@@ -50,11 +50,7 @@ public class SuscripcionController {
     //para usar delete pasar solo el id en JSON
     @DeleteMapping(value = "/deletesuscripcion")
     public ResponseEntity<?> deleteSusciption(@RequestBody Suscripcion suscripcion) {
-        try {
             suscripcionServices.DeleteSuscripcion(suscripcion.getIdvendedor());
             return new ResponseEntity<>(HttpStatus.OK);
-        } catch (Exception ex) {
-            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
-        }
     }
 }
