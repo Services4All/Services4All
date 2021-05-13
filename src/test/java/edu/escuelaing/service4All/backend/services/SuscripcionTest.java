@@ -28,12 +28,27 @@ class SuscripcionTest {
 
     @Autowired
     SuscripcionRepositoryImpl suscripcionRepositoryImpl;
+    //@Test
+    //void creacionCompraSetYGet() throws Exception {
+        //Suscripcion nuevo = new Suscripcion(1,1,new Date(0,0,0));
+        //suscripcionRepository.update(nuevo);
+        //nuevo.setMesesvigente(4);
+        //suscripcionRepositoryImpl.save(nuevo);
+        //comentario
+    //}
+
     @Test
-    void creacionCompraSetYGet() throws Exception {
-        Suscripcion nuevo = new Suscripcion(1,1,new Date(0,0,0));
-        suscripcionRepository.update(nuevo);
-        nuevo.setMesesvigente(4);
+    void deleteSuscription(){
+        Suscripcion nuevo = new Suscripcion(1,1,new Date());
         suscripcionRepositoryImpl.save(nuevo);
+        suscripcionRepositoryImpl.delete(nuevo.getIdvendedor());
+    }
+
+    @Test
+    void deleteSuscription2(){
+        Suscripcion nuevo = new Suscripcion(1,1,new Date());
+        suscripcionRepository.saveSuscripcion(nuevo);
+        suscripcionRepository.DeleteSuscripcion(1);
     }
 
     
