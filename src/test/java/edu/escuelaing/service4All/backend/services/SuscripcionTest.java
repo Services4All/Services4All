@@ -28,14 +28,14 @@ class SuscripcionTest {
 
     @Autowired
     SuscripcionRepositoryImpl suscripcionRepositoryImpl;
-    @Test
-    void creacionCompraSetYGet() throws Exception {
-        Suscripcion nuevo = new Suscripcion(1,1,new Date(0,0,0));
-        suscripcionRepository.update(nuevo);
-        nuevo.setMesesvigente(4);
-        suscripcionRepositoryImpl.save(nuevo);
+    //@Test
+    //void creacionCompraSetYGet() throws Exception {
+        //Suscripcion nuevo = new Suscripcion(1,1,new Date(0,0,0));
+        //suscripcionRepository.update(nuevo);
+        //nuevo.setMesesvigente(4);
+        //suscripcionRepositoryImpl.save(nuevo);
         //comentario
-    }
+    //}
 
     
 
