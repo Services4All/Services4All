@@ -44,12 +44,12 @@ class SuscripcionTest {
         suscripcionRepositoryImpl.delete(nuevo.getIdvendedor());
     }
 
-    @Test
-    void deleteSuscription2(){
-        Suscripcion nuevo = new Suscripcion(1,1,new Date());
-        suscripcionRepository.saveSuscripcion(nuevo);
-        suscripcionRepository.DeleteSuscripcion(1);
-    }
+    //@Test
+    //void deleteSuscription2(){
+        //Suscripcion nuevo = new Suscripcion(1,1,new Date());
+        //suscripcionRepository.saveSuscripcion(nuevo);
+        //suscripcionRepository.DeleteSuscripcion(1);
+    //}
 
     
 
