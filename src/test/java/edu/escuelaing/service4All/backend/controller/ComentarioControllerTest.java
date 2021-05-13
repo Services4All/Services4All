@@ -5,10 +5,13 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
+import edu.escuelaing.service4All.backend.controller.*;
 import edu.escuelaing.service4All.backend.model.*;
+import edu.escuelaing.service4All.backend.services.ComentarioServices;
 
-import java.sql.Date;
+import java.util.Date;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
@@ -26,10 +29,12 @@ class ComentarioControllerTest {
     @Autowired
 	ComentarioController comentarioController;
 
+    @Autowired
+    ComentarioServices comen;
 
     @Test
     void getAllComentarios() throws Exception {
-        Comentario comentario = new Comentario(1, 1, new Date(0, 0, 0), "sad", 1);
+        Comentario comentario = new Comentario(1, 1, new Date(), "sad", 1);
         comentarioController.findAllComentarios();
 
         assertTrue(true);
@@ -41,5 +46,19 @@ class ComentarioControllerTest {
         assertTrue(true);
     }
 
+    @Test
+    void putComentario() throws Exception {
+        Comentario comentario = new Comentario(222, 222, new Date(), "Prueba PUT", 4);
+        comentarioController.putComentario(comentario);
+        Comentario c=null;
+        for(Comentario x: comen.findAllComentarios()){
+            if(x.getId()==comentario.getId()){
+                c=x;
+            }
+        }
+        int a=comentario.getId();
+        int b=comentario.getId();
+        assertEquals(a,b);
+    }
 
 }

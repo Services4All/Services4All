@@ -24,10 +24,10 @@ public class ComentarioRepositoryImpl{
     }
     public void saveComentario(Comentario comentario) {
     	LocalDate creationDate = LocalDate.now();
-		  
 		comentario.setFecha(Date.valueOf(creationDate));
         comentarioRepository.save(comentario);
     }
+	
 	public Optional<Comentario>  findAllComentariosById(int id) {
 		List<Comentario> res= new ArrayList<>();
 		for (Comentario c: comentarioRepository.findAll()) {

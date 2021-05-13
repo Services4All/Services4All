@@ -1,6 +1,7 @@
 package edu.escuelaing.service4All.backend.services;
 
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,4 +28,17 @@ public class ComentarioServices {
 	public Optional<Comentario> findAllComentariosById(int id) {
         return comentarioRepositoryImpl.findAllComentariosById(id);
 	}
+    public void update(Comentario comentario) {
+
+		int s = comentario.getId();
+        Comentario comet=null;
+        for(Comentario x: comentarioRepositoryImpl.findAllComentarios()){
+            if(x.getId()==s){
+                comet=x;
+            }
+        }
+		comet.setComentario(comentario.getComentario());
+		comet.setFecha(new Date());
+		comentarioRepositoryImpl.saveComentario(comet);
+    }
 }
