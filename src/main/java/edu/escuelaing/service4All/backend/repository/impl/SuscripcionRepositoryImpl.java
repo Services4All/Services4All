@@ -22,6 +22,6 @@ public class SuscripcionRepositoryImpl {
 		suscripcionRepository.save(suscrip);
     }
 
-  
+    
 
 }

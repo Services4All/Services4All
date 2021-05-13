@@ -1,6 +1,8 @@
 package edu.escuelaing.service4All.backend.controller;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.escuelaing.service4All.backend.model.Suscripcion;
@@ -35,6 +38,18 @@ public class SuscripcionController {
            // Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
         }
+    }
+
+    @RequestMapping(value="/addsuscripcion",method = RequestMethod.POST)
+    public ResponseEntity<?> addReclamo(@RequestBody Suscripcion suscrip){
+        try {
+        	suscripcionServices.saveSuscripcion(suscrip);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        } catch (Exception ex) {
+            Logger.getLogger(SuscripcionController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+        }
+
     }
     
 }
