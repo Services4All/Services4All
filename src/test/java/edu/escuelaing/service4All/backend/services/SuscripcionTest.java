@@ -34,7 +34,6 @@ class SuscripcionTest {
         suscripcionRepository.update(nuevo);
         nuevo.setMesesvigente(4);
         suscripcionRepositoryImpl.save(nuevo);
-        suscripcionRepositoryImpl.delete(nuevo.getIdvendedor());
     }
 
     
