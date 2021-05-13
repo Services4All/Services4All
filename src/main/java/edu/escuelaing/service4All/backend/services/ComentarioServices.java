@@ -41,4 +41,6 @@ public class ComentarioServices {
 		comet.setFecha(new Date());
 		comentarioRepositoryImpl.saveComentario(comet);
     }
+
+	public void DeleteComentario(int id){comentarioRepositoryImpl.deleteComentario(id);}
 }
