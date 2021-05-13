@@ -29,5 +29,9 @@ public class SuscripcionServices {
 		suscrip.setMesesvigente(suscripcion.getMesesvigente());
 		suscripcionRepositoryImpl.save(suscrip);
     }
+
+    public void saveSuscripcion(Suscripcion suscrip) {
+        suscripcionRepositoryImpl.save(suscrip);
+    }
     
 }
