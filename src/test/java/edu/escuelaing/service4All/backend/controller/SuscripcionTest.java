@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,9 +35,14 @@ class SuscripcionTest {
         int b = 3;
         nuevo.getFechainicio();
         nuevo.getMesesvigente();
-        suscripcionServices.findAllSuscripciones();
+       /*  List<Suscripcion> all = suscripcionServices.findAllSuscripciones();
+        Suscripcion res= all.get(all.size()-1);
+        res.setIdvendedor(res.getIdvendedor()+1);
+        suscripcionServices.saveSuscripcion(res); */
+        
         assertEquals(a,b);
     }
+
 
    
 }
