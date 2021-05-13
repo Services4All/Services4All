@@ -48,6 +48,7 @@ class ComentarioTest {
         Comentario nuevo2 = new Comentario(222, 222, new Date(0, 0, 0), "sad", 222);
         comentarioServices.findAllComentarios();
         comentarioServices.saveComentario(nuevo2);
+        comentarioServices.deleteComentario(nuevo2.getId());
         assertTrue(true);
     }
 
@@ -57,6 +58,7 @@ class ComentarioTest {
         comentarioServicesImpl.findAllComentarios();
         comentarioServicesImpl.saveComentario(nuevo2);
         comentarioServicesImpl.findAllComentariosById(222);
+        comentarioServicesImpl.deleteComentario(nuevo2.getId());
         assertTrue(true);
     }
 

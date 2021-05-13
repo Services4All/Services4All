@@ -10,6 +10,7 @@ import edu.escuelaing.service4All.backend.model.*;
 import edu.escuelaing.service4All.backend.services.ComentarioServices;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -61,4 +62,10 @@ class ComentarioControllerTest {
         assertEquals(a,b);
     }
 
+    @Test
+    void deleteSuscripcion() throws Exception {
+        List<Comentario> all = comen.findAllComentarios();
+        Comentario res= all.get(1);
+        comentarioController.deleteComentario(res);
+    }
 }
