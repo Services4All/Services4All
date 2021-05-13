@@ -17,5 +17,17 @@ public class SuscripcionServices {
     public List<Suscripcion> findAllSuscripciones(){
         return suscripcionRepositoryImpl.findAllSuscripciones();
         }
+
+    public void update(Suscripcion suscripcion) {
+        int s = suscripcion.getIdvendedor();
+        Suscripcion suscrip=null;
+        for(Suscripcion x: suscripcionRepositoryImpl.findAllSuscripciones()){
+            if(x.getIdvendedor()==s){
+                suscrip=x;
+            }
+        }
+		suscrip.setMesesvigente(suscripcion.getMesesvigente());
+		suscripcionRepositoryImpl.save(suscrip);
+    }
     
 }

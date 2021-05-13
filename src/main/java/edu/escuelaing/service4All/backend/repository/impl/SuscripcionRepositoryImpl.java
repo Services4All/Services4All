@@ -18,4 +18,10 @@ public class SuscripcionRepositoryImpl {
 		return suscripcionRepository.findAll();
 	}
 
+    public void save(Suscripcion suscrip) {
+		suscripcionRepository.save(suscrip);
+    }
+
+  
+
 }
