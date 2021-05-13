@@ -37,4 +37,7 @@ public class ComentarioRepositoryImpl{
 		}
 		return res.stream().findAny();
 	}
+
+	public void deleteComentario (int idcomentario){
+		comentarioRepository.deleteById(idcomentario);}
 }
