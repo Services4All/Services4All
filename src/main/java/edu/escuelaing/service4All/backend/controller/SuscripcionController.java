@@ -26,5 +26,15 @@ public class SuscripcionController {
         List<Suscripcion> suscripcion = suscripcionServices.findAllSuscripciones();
        return suscripcion;
     }
+    @PutMapping(value = "/putsuscripcion")
+    public ResponseEntity<?> putService(@RequestBody Suscripcion suscripcion) {
+        try {
+            suscripcionServices.update(suscripcion);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception ex) {
+           // Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
     
 }
