@@ -64,12 +64,12 @@ public class ComentarioController {
 
     @PutMapping(value = "/putComentario")
     public ResponseEntity<?> putComentario(@RequestBody Comentario comentario) {
-        try {
+        // try {
             comentarioServices.update(comentario);
             return new ResponseEntity<>(HttpStatus.OK);
-        } catch (Exception ex) {
-            Logger.getLogger(ComentarioController.class.getName()).log(Level.SEVERE, null, ex);
-            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
-        }
+        // } catch (Exception ex) {
+        //     Logger.getLogger(ComentarioController.class.getName()).log(Level.SEVERE, null, ex);
+        //     return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+        // }
     }
 }
