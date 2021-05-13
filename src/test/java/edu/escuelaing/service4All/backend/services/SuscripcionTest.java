@@ -34,6 +34,7 @@ class SuscripcionTest {
         suscripcionRepository.update(nuevo);
         nuevo.setMesesvigente(4);
         suscripcionRepositoryImpl.save(nuevo);
+        //comentario
     }
 
     
