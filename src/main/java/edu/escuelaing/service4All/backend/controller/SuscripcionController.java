@@ -41,7 +41,7 @@ public class SuscripcionController {
     }
 
     @RequestMapping(value="/addsuscripcion",method = RequestMethod.POST)
-    public ResponseEntity<?> addReclamo(@RequestBody Suscripcion suscrip){
+    public ResponseEntity<?> addSuscripcion(@RequestBody Suscripcion suscrip){
         try {
         	suscripcionServices.saveSuscripcion(suscrip);
             return new ResponseEntity<>(HttpStatus.CREATED);

@@ -38,7 +38,7 @@ public class SuscripcionControllerTest {
         List<Suscripcion> all = suscripcionServices.findAllSuscripciones();
         Suscripcion res= all.get(all.size()-1);
         res.setIdvendedor(res.getIdvendedor()+1);
-        suscripcionServices.saveSuscripcion(res);
+        suscripcionController.addSuscripcion(res);
     }
    
 
