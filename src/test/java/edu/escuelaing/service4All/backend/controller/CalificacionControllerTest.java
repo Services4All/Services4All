@@ -44,7 +44,7 @@ class CalificacionControllerTest {
     @Test
     void getAllComentarios() throws Exception {
 
-        calificacionController.getCalificaciones();
+        calificacionController.findAllCalificaciones();
 
       
     }
