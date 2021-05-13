@@ -42,13 +42,13 @@ public class SuscripcionController {
 
     @RequestMapping(value="/addsuscripcion",method = RequestMethod.POST)
     public ResponseEntity<?> addSuscripcion(@RequestBody Suscripcion suscrip){
-        // try {
+        try {
         	suscripcionServices.saveSuscripcion(suscrip);
             return new ResponseEntity<>(HttpStatus.CREATED);
-        // } catch (Exception ex) {
-        //     Logger.getLogger(SuscripcionController.class.getName()).log(Level.SEVERE, null, ex);
-        //     return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
-        // }
+        } catch (Exception ex) {
+            Logger.getLogger(SuscripcionController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.FORBIDDEN);
+        }
 
     }
     
