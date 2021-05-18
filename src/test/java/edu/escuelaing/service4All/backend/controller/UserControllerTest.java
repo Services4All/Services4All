@@ -3,6 +3,8 @@ package edu.escuelaing.service4All.backend.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import edu.escuelaing.service4All.backend.Service4AllApplication;
+import edu.escuelaing.service4All.backend.model.User;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Service4AllApplication.class)
@@ -35,6 +38,11 @@ public class UserControllerTest {
     public void setup() {
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
+
+    @Autowired
+    UserController userController;
+
+ 
 
     // @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
     // @Test
@@ -74,6 +82,13 @@ public class UserControllerTest {
     //         Assert.assertTrue(ex.getClass().getSimpleName().equals("AuthenticationCredentialsNotFoundException"));
     //     }
     // }
+
+    @Test
+    void deleteUser() throws Exception {
+        List<User> all = (List<User>) userController.getUsers();
+        User res= all.get(1);
+        userController.deleteUser(res);
+    }
 
     @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
     @Test
