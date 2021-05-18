@@ -32,4 +32,5 @@ public class FavoritoRepositoryImpl {
         return res.stream().findAny();
     }
 
+    public void removeFavorito(Favorito fav) {favoritoRepository.delete(fav);}
 }

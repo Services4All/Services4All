@@ -41,4 +41,10 @@ class FavoritoControllerTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    void deleteFavoritos() throws Exception{
+        Favorito fav = new Favorito(222,222);
+        favoritoController.getAllFavoritos();
+        favoritoController.deleteFavorito(fav);
+    }
 }

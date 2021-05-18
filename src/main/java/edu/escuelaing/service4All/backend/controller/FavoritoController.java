@@ -1,6 +1,7 @@
 package edu.escuelaing.service4All.backend.controller;
 
 import com.google.gson.Gson;
+import edu.escuelaing.service4All.backend.model.Comentario;
 import edu.escuelaing.service4All.backend.model.Favorito;
 import edu.escuelaing.service4All.backend.services.FavoritoServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,4 +43,10 @@ public class FavoritoController {
         }
     }
 
+    //para usar delete pasar solo el id en JSON
+    @DeleteMapping(value = "/deleteFavorito")
+    public ResponseEntity<?> deleteFavorito(@RequestBody Favorito favorito) {
+        favoritosServices.removeFavorito(favorito);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

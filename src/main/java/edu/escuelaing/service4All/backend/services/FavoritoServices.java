@@ -24,4 +24,6 @@ public class FavoritoServices {
     public Optional<Favorito> findFavoritosByIdUsuario(int id) {
         return favorito.findAllFavoritosById(id);
     }
+
+    public void removeFavorito(Favorito fav){favorito.removeFavorito(fav);}
 }
