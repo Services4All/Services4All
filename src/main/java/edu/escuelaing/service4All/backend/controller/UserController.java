@@ -60,4 +60,11 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    //para usar delete pasar solo el id en JSON
+    @DeleteMapping(value = "/deleteUser")
+    public ResponseEntity<?> deleteUser(@RequestBody User user) {
+        userService.deleUser(user.getId());
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

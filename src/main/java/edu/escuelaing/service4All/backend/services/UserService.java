@@ -25,6 +25,8 @@ public interface UserService {
 
     public List<User> getUserForType(String tipousuario);
 
+    public void deleUser(int id);
+
     
 
 }
