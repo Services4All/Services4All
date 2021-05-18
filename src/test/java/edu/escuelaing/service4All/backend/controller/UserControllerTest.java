@@ -21,6 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import edu.escuelaing.service4All.backend.Service4AllApplication;
 import edu.escuelaing.service4All.backend.model.User;
+import edu.escuelaing.service4All.backend.services.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Service4AllApplication.class)
@@ -42,7 +43,8 @@ public class UserControllerTest {
     @Autowired
     UserController userController;
 
- 
+    @Autowired
+    UserService user;
 
     // @WithMockUser(value = "prueba@mail.com", password = "12345", roles = "ADMIN")
     // @Test
@@ -85,7 +87,7 @@ public class UserControllerTest {
 
     @Test
     void deleteUser() throws Exception {
-        List<User> all = (List<User>) userController.getUsers();
+        List<User> all = user.findAll();
         User res= all.get(1);
         userController.deleteUser(res);
     }
