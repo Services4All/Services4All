@@ -26,6 +26,10 @@ public class ReclamoRepositoryImpl{
 		reclamo.setCreationdate(Date.valueOf(creationDate));
         reclamoRepository.save(reclamo);
     }
+  
+    public void deleteReclamo(int reclamo) {
+        reclamoRepository.deleteById(reclamo);
+    }
 	
 
 }
