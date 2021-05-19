@@ -46,7 +46,7 @@ public class ReclamoController {
 
     //para usar delete pasar solo el id en JSON
     @DeleteMapping(value = "/deleteReclamo")
-    public ResponseEntity<?> deleteFavorito(@RequestBody Reclamo reclamo) {
+    public ResponseEntity<?> deleteReclamo(@RequestBody Reclamo reclamo) {
         reclamoServices.deleteReclamo(reclamo.getId());
         return new ResponseEntity<>(HttpStatus.OK);
     }
