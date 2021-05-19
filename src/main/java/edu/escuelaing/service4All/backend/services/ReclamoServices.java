@@ -22,6 +22,9 @@ public class ReclamoServices {
 	public void saveComentario(Reclamo c){
 		reclamoRepositoryImpl.saveReclamo(c);
 	}
+    public void deleteReclamo(int reclamo) {
+		reclamoRepositoryImpl.deleteReclamo(reclamo);
+    }
 	
 	
 }

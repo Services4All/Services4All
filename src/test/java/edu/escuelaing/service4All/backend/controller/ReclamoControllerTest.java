@@ -8,7 +8,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import edu.escuelaing.service4All.backend.model.*;
 
 import java.sql.Date;
-
+import java.util.List;
 
 import org.springframework.test.context.ActiveProfiles;
 
@@ -31,6 +31,13 @@ public class ReclamoControllerTest {
         Reclamo reclamo = new Reclamo(1, 1, new Date(0, 0, 0), "sad", 1);
         reclamoController.findAllReclamos();
       
+    }
+
+    @Test
+    void deleteReclamo() throws Exception {
+        List<Reclamo> all = reclamoController.findAllReclamos();
+        Reclamo res= all.get(1);
+        reclamoController.deleteReclamo(res);
     }
    
 
